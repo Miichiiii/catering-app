@@ -1,36 +1,42 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import EventTypeStep from "./wizard-steps/event-type-step"
-import LocationStep from "./wizard-steps/location-step"
-import GuestCountStep from "./wizard-steps/guest-count-step"
-import DateStep from "./wizard-steps/date-step"
-import DeliveryInfoStep from "./wizard-steps/delivery-info-step"
-import AllergyStep from "./wizard-steps/allergy-step"
-import FoodSelectionStep from "./wizard-steps/food-selection-step"
-import CartSidebar from "./cart-sidebar"
-import { getPackageItems } from "@/lib/food-data"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import EventTypeStep from "./wizard-steps/event-type-step";
+import LocationStep from "./wizard-steps/location-step";
+import GuestCountStep from "./wizard-steps/guest-count-step";
+import DateStep from "./wizard-steps/date-step";
+import DeliveryInfoStep from "./wizard-steps/delivery-info-step";
+import AllergyStep from "./wizard-steps/allergy-step";
+import FoodSelectionStep from "./wizard-steps/food-selection-step";
+import CheckoutStep from "./wizard-steps/checkout-step";
+import CartSidebar from "./cart-sidebar";
+import { getPackageItems } from "@/lib/food-data";
 
 interface BookingWizardProps {
-  packageName: "classic" | "gold" | "premium"
-  onClose: () => void
+  packageName: "classic" | "gold" | "premium";
+  onClose: () => void;
 }
 
-export default function BookingWizard({ packageName, onClose }: BookingWizardProps) {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [eventType, setEventType] = useState<"delivery" | "pickup" | null>(null)
-  const [location, setLocation] = useState("")
-  const [guestCount, setGuestCount] = useState<number | null>(null)
-  const [eventDate, setEventDate] = useState("")
-  const [streetName, setStreetName] = useState("")
-  const [streetNumber, setStreetNumber] = useState("")
-  const [locationName, setLocationName] = useState("")
-  const [eventStart, setEventStart] = useState("")
-  const [deliveryTime, setDeliveryTime] = useState("")
-  const [remarks, setRemarks] = useState("")
-  const [selectedAllergies, setSelectedAllergies] = useState<string[]>([])
+export default function BookingWizard({
+  packageName,
+  onClose,
+}: BookingWizardProps) {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [eventType, setEventType] = useState<"delivery" | "pickup" | null>(
+    null
+  );
+  const [location, setLocation] = useState("");
+  const [guestCount, setGuestCount] = useState<number | null>(null);
+  const [eventDate, setEventDate] = useState("");
+  const [streetName, setStreetName] = useState("");
+  const [streetNumber, setStreetNumber] = useState("");
+  const [locationName, setLocationName] = useState("");
+  const [eventStart, setEventStart] = useState("");
+  const [deliveryTime, setDeliveryTime] = useState("");
+  const [remarks, setRemarks] = useState("");
+  const [selectedAllergies, setSelectedAllergies] = useState<string[]>([]);
   const [selectedItems, setSelectedItems] = useState<Record<string, string[]>>({
     vorspeisen: [],
     hauptgaenge: [],
@@ -38,9 +44,23 @@ export default function BookingWizard({ packageName, onClose }: BookingWizardPro
     beilagen: [],
     dips_saucen: [],
     desserts: [],
-  })
+    suppen: [],
+  });
 
-  const packageLimits = getPackageItems(packageName)
+  // Checkout States
+  const [isCompany, setIsCompany] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [billingStreet, setBillingStreet] = useState("");
+  const [billingHouseNumber, setBillingHouseNumber] = useState("");
+  const [billingZipCode, setBillingZipCode] = useState("");
+  const [billingCity, setBillingCity] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [agbAccepted, setAgbAccepted] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+
+  const packageLimits = getPackageItems(packageName);
   const steps = [
     "Event-Art",
     "Postleitzahl",
@@ -51,65 +71,117 @@ export default function BookingWizard({ packageName, onClose }: BookingWizardPro
     "Vorspeisen",
     "Hauptgänge",
     "Fingerfoods",
-    "Beilagen",
-    "Dips & Saucen",
+    "Suppen",
     "Desserts",
-  ]
+    "Checkout",
+  ];
 
   const basePrices = {
     classic: 34.9,
     gold: 38.9,
     premium: 46.9,
-  }
+  };
 
-  const servicefee = guestCount && guestCount <= 20 ? 40.0 : 0
-  const subTotal = (guestCount || 0) * basePrices[packageName]
-  const vat = subTotal * 0.07
-  const total = subTotal + vat + servicefee
+  const servicefee = guestCount && guestCount <= 20 ? 40.0 : 0;
+  const subTotal = (guestCount || 0) * basePrices[packageName];
+  const vat = subTotal * 0.07;
+  const total = subTotal + vat + servicefee;
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1)
+      setCurrentStep(currentStep + 1);
     }
-  }
+  };
 
   const handlePrev = () => {
     if (currentStep > 0) {
-      setCurrentStep(currentStep - 1)
+      setCurrentStep(currentStep - 1);
     }
-  }
+  };
+
+  const handleSubmit = () => {
+    if (!agbAccepted || !privacyAccepted) {
+      alert("Bitte akzeptieren Sie die AGB und Datenschutzerklärung.");
+      return;
+    }
+
+    // Here you would send the order to your backend
+    console.log("Order submitted:", {
+      packageName,
+      eventType,
+      location,
+      guestCount,
+      eventDate,
+      streetName,
+      streetNumber,
+      locationName,
+      eventStart,
+      deliveryTime,
+      remarks,
+      selectedAllergies,
+      selectedItems,
+      isCompany,
+      firstName,
+      lastName,
+      billingStreet,
+      billingHouseNumber,
+      billingZipCode,
+      billingCity,
+      email,
+      phone,
+      total,
+    });
+
+    alert(
+      "Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden bei Ihnen."
+    );
+    onClose();
+  };
 
   const toggleItemSelection = (category: string, itemId: string) => {
-    const categoryKey = category.toLowerCase().replace(/ & /g, "_").replace(/ /g, "_")
-    const currentSelected = selectedItems[categoryKey] || []
-    const limit = packageLimits[categoryKey as keyof typeof packageLimits] || 0
+    const categoryKey = category
+      .toLowerCase()
+      .replace(/ & /g, "_")
+      .replace(/ /g, "_");
+    const currentSelected = selectedItems[categoryKey] || [];
+    const limit = packageLimits[categoryKey as keyof typeof packageLimits] || 0;
 
     if (currentSelected.includes(itemId)) {
       setSelectedItems({
         ...selectedItems,
         [categoryKey]: currentSelected.filter((id) => id !== itemId),
-      })
+      });
     } else if (currentSelected.length < limit) {
       setSelectedItems({
         ...selectedItems,
         [categoryKey]: [...currentSelected, itemId],
-      })
+      });
     }
-  }
+  };
 
   const toggleAllergy = (allergy: string) => {
-    setSelectedAllergies((prev) => (prev.includes(allergy) ? prev.filter((a) => a !== allergy) : [...prev, allergy]))
-  }
+    setSelectedAllergies((prev) =>
+      prev.includes(allergy)
+        ? prev.filter((a) => a !== allergy)
+        : [...prev, allergy]
+    );
+  };
 
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Button variant="ghost" onClick={onClose} className="text-foreground hover:bg-muted">
+          <Button
+            variant="ghost"
+            onClick={onClose}
+            className="text-foreground hover:bg-muted"
+          >
             ← Zurück zur Startseite
           </Button>
-          <h1 className="text-2xl font-bold text-primary">Shemesh Restaurant</h1>
+          <h1 className="text-2xl font-bold text-primary">
+            Shemesh Restaurant
+          </h1>
           <div className="w-20"></div>
         </div>
       </div>
@@ -137,10 +209,18 @@ export default function BookingWizard({ packageName, onClose }: BookingWizardPro
 
             {/* Step Content */}
             <Card className="p-8 mb-8">
-              {currentStep === 0 && <EventTypeStep selected={eventType} onChange={setEventType} />}
-              {currentStep === 1 && <LocationStep value={location} onChange={setLocation} />}
-              {currentStep === 2 && <GuestCountStep value={guestCount} onChange={setGuestCount} />}
-              {currentStep === 3 && <DateStep value={eventDate} onChange={setEventDate} />}
+              {currentStep === 0 && (
+                <EventTypeStep selected={eventType} onChange={setEventType} />
+              )}
+              {currentStep === 1 && (
+                <LocationStep value={location} onChange={setLocation} />
+              )}
+              {currentStep === 2 && (
+                <GuestCountStep value={guestCount} onChange={setGuestCount} />
+              )}
+              {currentStep === 3 && (
+                <DateStep value={eventDate} onChange={setEventDate} />
+              )}
               {currentStep === 4 && (
                 <DeliveryInfoStep
                   eventType={eventType}
@@ -160,15 +240,27 @@ export default function BookingWizard({ packageName, onClose }: BookingWizardPro
                 />
               )}
               {currentStep === 5 && (
-                <AllergyStep selectedAllergies={selectedAllergies} onToggleAllergy={toggleAllergy} />
+                <AllergyStep
+                  selectedAllergies={selectedAllergies}
+                  onToggleAllergy={toggleAllergy}
+                />
               )}
-              {currentStep >= 6 && (
+              {currentStep >= 6 && currentStep <= 10 && (
                 <FoodSelectionStep
-                  category={steps[currentStep].replace(" & ", "_").replace(" ", "")}
+                  category={steps[currentStep]
+                    .replace(" & ", "_")
+                    .replace(" ", "")}
                   selectedItems={
-                    selectedItems[steps[currentStep].toLowerCase().replace(/ & /g, "_").replace(/ /g, "_")] || []
+                    selectedItems[
+                      steps[currentStep]
+                        .toLowerCase()
+                        .replace(/ & /g, "_")
+                        .replace(/ /g, "_")
+                    ] || []
                   }
-                  onToggleItem={(itemId) => toggleItemSelection(steps[currentStep], itemId)}
+                  onToggleItem={(itemId) =>
+                    toggleItemSelection(steps[currentStep], itemId)
+                  }
                   limit={
                     packageLimits[
                       steps[currentStep]
@@ -177,6 +269,32 @@ export default function BookingWizard({ packageName, onClose }: BookingWizardPro
                         .replace(/ /g, "_") as keyof typeof packageLimits
                     ] || 0
                   }
+                />
+              )}
+              {currentStep === 11 && (
+                <CheckoutStep
+                  isCompany={isCompany}
+                  firstName={firstName}
+                  lastName={lastName}
+                  street={billingStreet}
+                  houseNumber={billingHouseNumber}
+                  zipCode={billingZipCode}
+                  city={billingCity}
+                  email={email}
+                  phone={phone}
+                  agbAccepted={agbAccepted}
+                  privacyAccepted={privacyAccepted}
+                  onIsCompanyChange={setIsCompany}
+                  onFirstNameChange={setFirstName}
+                  onLastNameChange={setLastName}
+                  onStreetChange={setBillingStreet}
+                  onHouseNumberChange={setBillingHouseNumber}
+                  onZipCodeChange={setBillingZipCode}
+                  onCityChange={setBillingCity}
+                  onEmailChange={setEmail}
+                  onPhoneChange={setPhone}
+                  onAgbAcceptedChange={setAgbAccepted}
+                  onPrivacyAcceptedChange={setPrivacyAccepted}
                 />
               )}
             </Card>
@@ -191,13 +309,22 @@ export default function BookingWizard({ packageName, onClose }: BookingWizardPro
               >
                 ← Zurück
               </Button>
-              <Button
-                onClick={handleNext}
-                disabled={currentStep === steps.length - 1}
-                className="px-8 bg-primary hover:opacity-90 text-primary-foreground"
-              >
-                Weiter →
-              </Button>
+              {currentStep === steps.length - 1 ? (
+                <Button
+                  onClick={handleSubmit}
+                  disabled={!agbAccepted || !privacyAccepted}
+                  className="px-8 bg-primary hover:opacity-90 text-primary-foreground"
+                >
+                  Anfrage absenden
+                </Button>
+              ) : (
+                <Button
+                  onClick={handleNext}
+                  className="px-8 bg-primary hover:opacity-90 text-primary-foreground"
+                >
+                  Weiter →
+                </Button>
+              )}
             </div>
           </div>
 
@@ -216,5 +343,5 @@ export default function BookingWizard({ packageName, onClose }: BookingWizardPro
         </div>
       </div>
     </div>
-  )
+  );
 }
