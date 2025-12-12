@@ -1,5 +1,7 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
-import { Alert } from "@/components/ui/alert";
+import { motion } from "framer-motion";
 
 export default function ProcessSection() {
   const steps = [
@@ -44,47 +46,86 @@ export default function ProcessSection() {
   return (
     <section id="process" className="py-16 px-4 md:px-6 lg:px-8 bg-secondary">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 text-foreground">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold text-center mb-4 text-foreground"
+        >
           So funktioniert unser Catering 💡
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          {steps.map((step) => (
-            <Card key={step.number} className="p-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-md bg-accent text-accent-foreground font-bold">
-                    {step.number}
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow">
+                <div className="flex gap-4">
+                  <motion.div
+                    className="flex-shrink-0"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-accent text-accent-foreground font-bold">
+                      {step.number}
+                    </div>
+                  </motion.div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-foreground">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-foreground">{step.description}</p>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
-        <Card className="border-2 border-amber-500 bg-amber-50 dark:bg-amber-950/20 p-6 shadow-lg">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0">
-              <div className="text-4xl">⚠️</div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <Card className="border-2 border-amber-500 bg-amber-50 dark:bg-amber-950/20 p-6 shadow-lg">
+            <div className="flex gap-4">
+              <motion.div
+                className="flex-shrink-0"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  rotate: [0, -10, 10, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 3,
+                }}
+              >
+                <div className="text-4xl">⚠️</div>
+              </motion.div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
+                  WICHTIG
+                </h3>
+                <p className="text-foreground leading-relaxed">
+                  Sollte sich im Nachgang etwas an deiner Buchung ändern, melde
+                  dich gerne bei uns telefonisch oder per E-Mail. Wir setzen
+                  alles daran, deine Wünsche bestmöglich umzusetzen.
+                </p>
+              </div>
             </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
-                WICHTIG
-              </h3>
-              <p className="text-foreground leading-relaxed">
-                Sollte sich im Nachgang etwas an deiner Buchung ändern, melde
-                dich gerne bei uns telefonisch oder per E-Mail. Wir setzen alles
-                daran, deine Wünsche bestmöglich umzusetzen.
-              </p>
-            </div>
-          </div>
-        </Card>
+          </Card>
+        </motion.div>
       </div>
     </section>
   );
