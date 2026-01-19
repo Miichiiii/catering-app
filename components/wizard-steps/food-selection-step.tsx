@@ -28,12 +28,11 @@ export default function FoodSelectionStep({
     .replace(/ü/g, "ue")
     .replace(/ & /g, "_")
     .replace(/ /g, "_");
-  
+
   // Hole alle Items und filtere nach packageName
   const allItems = foodItems[categoryKey] || [];
   const items = allItems.filter(
-    (item) =>
-      !item.availableIn || item.availableIn.includes(packageName)
+    (item) => !item.availableIn || item.availableIn.includes(packageName),
   );
 
   const categoryNameMap: Record<string, string> = {
