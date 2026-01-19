@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeroSectionProps {
   onSelectPackage: (packageName: "classic" | "gold" | "premium") => void;
@@ -67,12 +68,14 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
             >
               Jetzt Catering anfragen
             </Button>
-            <Button
-              variant="outline"
-              className="px-8 py-6 text-lg border-primary text-primary hover:bg-primary/10 bg-background/80 backdrop-blur-sm hover:scale-105 transition-transform"
-            >
-              Menü ansehen
-            </Button>
+            <Link href="/menu">
+              <Button
+                variant="outline"
+                className="px-8 py-6 text-lg border-primary text-primary hover:bg-primary/10 bg-background/80 backdrop-blur-sm hover:scale-105 transition-transform"
+              >
+                Menü ansehen
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
 

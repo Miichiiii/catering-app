@@ -25,7 +25,7 @@ export default function BookingWizard({
 }: BookingWizardProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [eventType, setEventType] = useState<"delivery" | "pickup" | null>(
-    null
+    null,
   );
   const [location, setLocation] = useState("");
   const [guestCount, setGuestCount] = useState<number | null>(null);
@@ -99,43 +99,63 @@ export default function BookingWizard({
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!agbAccepted || !privacyAccepted) {
       alert("Bitte akzeptieren Sie die AGB und Datenschutzerklärung.");
       return;
     }
 
-    // Here you would send the order to your backend
-    console.log("Order submitted:", {
-      packageName,
-      eventType,
-      location,
-      guestCount,
-      eventDate,
-      streetName,
-      streetNumber,
-      locationName,
-      eventStart,
-      deliveryTime,
-      remarks,
-      selectedAllergies,
-      selectedItems,
-      isCompany,
-      firstName,
-      lastName,
-      billingStreet,
-      billingHouseNumber,
-      billingZipCode,
-      billingCity,
-      email,
-      phone,
-      total,
-    });
+    try {
+      // Prepare data for email
+      const orderData = {
+        packageName,
+        guestCount,
+        eventType,
+        eventDate,
+        eventTime: eventStart,
+        location,
+        deliveryAddress: {
+          street: `${streetName} ${streetNumber}`,
+          postalCode: "Nicht angegeben",
+          city: locationName,
+        },
+        selectedItems,
+        allergies: selectedAllergies.join(", "),
+        customerInfo: {
+          firstName,
+          lastName,
+          email,
+          phone,
+          company: isCompany ? "Ja" : "Nein",
+        },
+        total,
+      };
 
-    alert(
-      "Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden bei Ihnen."
-    );
-    onClose();
+      // Send order via API
+      const response = await fetch("/api/send-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      if (response.ok) {
+        alert(
+          "Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+        );
+        onClose();
+      } else {
+        alert(
+          "Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es später erneut.",
+        );
+      }
+    } catch (error) {
+      console.error("Error submitting order:", error);
+      alert(
+        "Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es später erneut.",
+      );
+    }
   };
 
   const toggleItemSelection = (category: string, itemId: string) => {
@@ -163,7 +183,7 @@ export default function BookingWizard({
     setSelectedAllergies((prev) =>
       prev.includes(allergy)
         ? prev.filter((a) => a !== allergy)
-        : [...prev, allergy]
+        : [...prev, allergy],
     );
   };
 

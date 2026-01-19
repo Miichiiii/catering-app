@@ -85,12 +85,6 @@ export default function FoodSelectionStep({
                   <span className="text-6xl">🍽️</span>
                 </div>
               )}
-              {/* Preis Badge */}
-              {item.price && (
-                <div className="absolute top-2 right-2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                  {item.price.toFixed(2)} €
-                </div>
-              )}
             </div>
 
             {/* Content */}
