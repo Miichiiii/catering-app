@@ -115,7 +115,7 @@ Anfrage eingegangen am: ${new Date().toLocaleString("de-DE")}
     // Email senden
     await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: "email@web.de",
+      to: "michael.medvidov@dci-student.org",
       subject: `Neue Catering-Anfrage von ${customerInfo?.firstName} ${customerInfo?.lastName}`,
       text: emailContent,
       replyTo: customerInfo?.email,

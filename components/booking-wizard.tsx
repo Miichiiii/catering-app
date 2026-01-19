@@ -12,7 +12,7 @@ import AllergyStep from "./wizard-steps/allergy-step";
 import FoodSelectionStep from "./wizard-steps/food-selection-step";
 import CheckoutStep from "./wizard-steps/checkout-step";
 import CartSidebar from "./cart-sidebar";
-import { getPackageItems } from "@/lib/food-data";
+import { getPackageItems, foodItems } from "@/lib/food-data";
 
 interface BookingWizardProps {
   packageName: "classic" | "gold" | "premium";
@@ -71,6 +71,7 @@ export default function BookingWizard({
     "Vorspeisen",
     "Hauptgänge",
     "Fingerfoods",
+    "Beilagen",
     "Suppen",
     "Desserts",
     "Checkout",
@@ -99,68 +100,104 @@ export default function BookingWizard({
     }
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (!agbAccepted || !privacyAccepted) {
       alert("Bitte akzeptieren Sie die AGB und Datenschutzerklärung.");
       return;
     }
 
-    try {
-      // Prepare data for email
-      const orderData = {
-        packageName,
-        guestCount,
-        eventType,
-        eventDate,
-        eventTime: eventStart,
-        location,
-        deliveryAddress: {
-          street: `${streetName} ${streetNumber}`,
-          postalCode: "Nicht angegeben",
-          city: locationName,
-        },
-        selectedItems,
-        allergies: selectedAllergies.join(", "),
-        customerInfo: {
-          firstName,
-          lastName,
-          email,
-          phone,
-          company: isCompany ? "Ja" : "Nein",
-        },
-        total,
+    // Formatiere ausgewählte Gerichte mit Namen
+    const formatItems = () => {
+      const categories = {
+        vorspeisen: "Vorspeisen/Salate",
+        hauptgaenge: "Hauptgänge",
+        fingerfoods: "Warme Vorspeisen",
+        suppen: "Suppen",
+        beilagen: "Beilagen",
+        desserts: "Desserts",
       };
 
-      // Send order via API
-      const response = await fetch("/api/send-order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
+      let result = "";
+      Object.entries(selectedItems).forEach(([key, itemIds]) => {
+        if (itemIds.length > 0) {
+          result += `\n\n${categories[key as keyof typeof categories]}:\n`;
+          // Hole die tatsächlichen Gerichte aus foodItems
+          const categoryItems = foodItems[key as keyof typeof foodItems] || [];
+          itemIds.forEach((itemId: string) => {
+            const item = categoryItems.find((i) => i.id === itemId);
+            if (item) {
+              result += `  - ${item.name}`;
+              if (item.description) {
+                result += ` (${item.description})`;
+              }
+              result += `\n`;
+            }
+          });
+        }
       });
+      return result || "\nKeine Gerichte ausgewählt";
+    };
 
-      if (response.ok) {
-        alert(
-          "Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
-        );
-        onClose();
-      } else {
-        alert(
-          "Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es später erneut.",
-        );
-      }
-    } catch (error) {
-      console.error("Error submitting order:", error);
+    // Erstelle Email-Inhalt
+    const emailBody = `NEUE CATERING-ANFRAGE
+========================
+
+MENÜ-PAKET: ${packageName.toUpperCase()}
+Anzahl Gäste: ${guestCount}
+
+VERANSTALTUNG
+-------------
+Art: ${eventType || "Nicht angegeben"}
+Datum: ${eventDate || "Nicht angegeben"}
+Uhrzeit: ${eventStart || "Nicht angegeben"}
+Ort: ${location || "Nicht angegeben"}
+
+LIEFERADRESSE
+-------------
+Straße: ${streetName} ${streetNumber}
+Zusatz: ${locationName}
+
+AUSGEWÄHLTE GERICHTE${formatItems()}
+
+ALLERGIEN
+---------
+${selectedAllergies.length > 0 ? selectedAllergies.join(", ") : "Keine"}
+
+KUNDENDATEN
+-----------
+Name: ${firstName} ${lastName}
+Email: ${email}
+Telefon: ${phone}
+Firma: ${isCompany ? "Ja" : "Nein"}
+
+Rechnungsadresse:
+${billingStreet} ${billingHouseNumber}
+${billingZipCode} ${billingCity}
+
+GESAMTPREIS: ${total.toFixed(2).replace(".", ",")}€ (inkl. MwSt.)
+
+========================`;
+
+    const subject = `Catering-Anfrage von ${firstName} ${lastName} - ${packageName.toUpperCase()}`;
+    const mailtoLink = `mailto:michael.medvidov@dci-student.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+    // Öffne Email-Programm
+    window.location.href = mailtoLink;
+
+    setTimeout(() => {
       alert(
-        "Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es später erneut.",
+        "Vielen Dank für Ihre Anfrage! Bitte senden Sie die Email ab, die sich gerade in Ihrem Email-Programm geöffnet hat.",
       );
-    }
+      onClose();
+    }, 500);
   };
 
   const toggleItemSelection = (category: string, itemId: string) => {
     const categoryKey = category
       .toLowerCase()
+      .replace(/ä/g, "ae")
+      .replace(/ö/g, "oe")
+      .replace(/ü/g, "ue")
       .replace(/ & /g, "_")
       .replace(/ /g, "_");
     const currentSelected = selectedItems[categoryKey] || [];
@@ -265,15 +302,17 @@ export default function BookingWizard({
                   onToggleAllergy={toggleAllergy}
                 />
               )}
-              {currentStep >= 6 && currentStep <= 10 && (
+              {currentStep >= 6 && currentStep <= 11 && (
                 <FoodSelectionStep
-                  category={steps[currentStep]
-                    .replace(" & ", "_")
-                    .replace(" ", "")}
+                  category={steps[currentStep]}
+                  packageName={packageName}
                   selectedItems={
                     selectedItems[
                       steps[currentStep]
                         .toLowerCase()
+                        .replace(/ä/g, "ae")
+                        .replace(/ö/g, "oe")
+                        .replace(/ü/g, "ue")
                         .replace(/ & /g, "_")
                         .replace(/ /g, "_")
                     ] || []
@@ -285,13 +324,16 @@ export default function BookingWizard({
                     packageLimits[
                       steps[currentStep]
                         .toLowerCase()
+                        .replace(/ä/g, "ae")
+                        .replace(/ö/g, "oe")
+                        .replace(/ü/g, "ue")
                         .replace(/ & /g, "_")
                         .replace(/ /g, "_") as keyof typeof packageLimits
                     ] || 0
                   }
                 />
               )}
-              {currentStep === 11 && (
+              {currentStep === 12 && (
                 <CheckoutStep
                   isCompany={isCompany}
                   firstName={firstName}

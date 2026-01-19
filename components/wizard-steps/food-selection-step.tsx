@@ -10,6 +10,7 @@ interface FoodSelectionStepProps {
   selectedItems: string[];
   onToggleItem: (itemId: string) => void;
   limit: number;
+  packageName: "classic" | "gold" | "premium";
 }
 
 export default function FoodSelectionStep({
@@ -17,6 +18,7 @@ export default function FoodSelectionStep({
   selectedItems,
   onToggleItem,
   limit,
+  packageName,
 }: FoodSelectionStepProps) {
   // Konvertiere Kategorie-Name zu Key (mit Umlaut-Ersetzung)
   const categoryKey = category
@@ -26,14 +28,20 @@ export default function FoodSelectionStep({
     .replace(/ü/g, "ue")
     .replace(/ & /g, "_")
     .replace(/ /g, "_");
-  const items = foodItems[categoryKey] || [];
+  
+  // Hole alle Items und filtere nach packageName
+  const allItems = foodItems[categoryKey] || [];
+  const items = allItems.filter(
+    (item) =>
+      !item.availableIn || item.availableIn.includes(packageName)
+  );
 
   const categoryNameMap: Record<string, string> = {
     vorspeisen: "Vorspeisen",
     hauptgaenge: "Hauptgänge",
     fingerfoods: "Fingerfoods",
     beilagen: "Beilagen",
-    dips_saucen: "Dips & Saucen",
+    dips_saucen: "Suppen, Dipps & Saucen",
     desserts: "Desserts",
     suppen: "Suppen",
   };

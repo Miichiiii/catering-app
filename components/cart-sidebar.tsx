@@ -28,7 +28,7 @@ export default function CartSidebar({
     hauptgaenge: "Hauptgänge",
     fingerfoods: "Fingerfoods",
     beilagen: "Beilagen",
-    dips_saucen: "Dips & Saucen",
+    dips_saucen: "Suppen, Dipps & Saucen",
     desserts: "Desserts",
   }
 
@@ -55,14 +55,20 @@ export default function CartSidebar({
 
         {/* Selection Progress */}
         <div className="space-y-2 mb-6 pb-6 border-b border-accent-foreground/20">
-          {Object.entries(categoryLabels).map(([key, label]) => (
-            <div key={key} className="text-sm">
-              <div className="font-semibold">{label}</div>
-              <div className="text-xs opacity-75">
-                {selectedItems[key]?.length || 0} von {packageLimits[key]}
+          {Object.entries(categoryLabels).map(([key, label]) => {
+            const limit = packageLimits[key];
+            // Zeige nur Kategorien mit Limit > 0
+            if (limit === 0) return null;
+            
+            return (
+              <div key={key} className="text-sm">
+                <div className="font-semibold">{label}</div>
+                <div className="text-xs opacity-75">
+                  {selectedItems[key]?.length || 0} von {limit}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Service Fee */}
