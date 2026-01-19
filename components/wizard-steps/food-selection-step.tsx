@@ -18,8 +18,12 @@ export default function FoodSelectionStep({
   onToggleItem,
   limit,
 }: FoodSelectionStepProps) {
+  // Konvertiere Kategorie-Name zu Key (mit Umlaut-Ersetzung)
   const categoryKey = category
     .toLowerCase()
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
     .replace(/ & /g, "_")
     .replace(/ /g, "_");
   const items = foodItems[categoryKey] || [];
