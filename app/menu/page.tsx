@@ -6,6 +6,20 @@ import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+interface FoodItem {
+  id: string;
+  name: string;
+  description: string;
+  availableIn?: string[];
+}
+
+interface MenuSection {
+  title: string;
+  count: number;
+  subtitle?: string;
+  items: FoodItem[];
+}
+
 export default function MenuPage() {
   const menuConfigurations = [
     {
@@ -17,8 +31,14 @@ export default function MenuPage() {
         {
           title: "Salate",
           count: 4,
-          items: foodItems.vorspeisen.filter((item) =>
-            item.availableIn?.includes("classic"),
+          items: foodItems.vorspeisen.filter(
+            (item) =>
+              item.availableIn?.includes("classic") &&
+              (item.name.toLowerCase().includes("salat") ||
+                item.name.toLowerCase().includes("rote-bete") ||
+                item.name.toLowerCase().includes("möhren") ||
+                item.name.toLowerCase().includes("kohl") ||
+                item.name.toLowerCase().includes("garten")),
           ),
         },
         {
@@ -27,8 +47,11 @@ export default function MenuPage() {
           items: foodItems.vorspeisen.filter(
             (item) =>
               item.availableIn?.includes("classic") &&
-              item.category === "Vorspeisen" &&
-              !item.description.includes("Salat"),
+              !item.name.toLowerCase().includes("salat") &&
+              !item.name.toLowerCase().includes("rote-bete") &&
+              !item.name.toLowerCase().includes("möhren") &&
+              !item.name.toLowerCase().includes("kohl") &&
+              !item.name.toLowerCase().includes("garten"),
           ),
         },
         {
@@ -58,8 +81,14 @@ export default function MenuPage() {
         {
           title: "Salate",
           count: 5,
-          items: foodItems.vorspeisen.filter((item) =>
-            item.availableIn?.includes("gold"),
+          items: foodItems.vorspeisen.filter(
+            (item) =>
+              item.availableIn?.includes("gold") &&
+              (item.name.toLowerCase().includes("salat") ||
+                item.name.toLowerCase().includes("rote-bete") ||
+                item.name.toLowerCase().includes("möhren") ||
+                item.name.toLowerCase().includes("kohl") ||
+                item.name.toLowerCase().includes("garten")),
           ),
         },
         {
@@ -68,7 +97,11 @@ export default function MenuPage() {
           items: foodItems.vorspeisen.filter(
             (item) =>
               item.availableIn?.includes("gold") &&
-              item.category === "Vorspeisen",
+              !item.name.toLowerCase().includes("salat") &&
+              !item.name.toLowerCase().includes("rote-bete") &&
+              !item.name.toLowerCase().includes("möhren") &&
+              !item.name.toLowerCase().includes("kohl") &&
+              !item.name.toLowerCase().includes("garten"),
           ),
         },
         {
@@ -110,8 +143,14 @@ export default function MenuPage() {
         {
           title: "Salate",
           count: 6,
-          items: foodItems.vorspeisen.filter((item) =>
-            item.availableIn?.includes("premium"),
+          items: foodItems.vorspeisen.filter(
+            (item) =>
+              item.availableIn?.includes("premium") &&
+              (item.name.toLowerCase().includes("salat") ||
+                item.name.toLowerCase().includes("rote-bete") ||
+                item.name.toLowerCase().includes("möhren") ||
+                item.name.toLowerCase().includes("kohl") ||
+                item.name.toLowerCase().includes("garten")),
           ),
         },
         {
@@ -243,8 +282,8 @@ export default function MenuPage() {
                           {section.title}
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          {section.subtitle
-                            ? section.subtitle
+                          {(section as MenuSection).subtitle
+                            ? (section as MenuSection).subtitle
                             : `Wähle ${section.count} aus:`}
                         </p>
                       </div>

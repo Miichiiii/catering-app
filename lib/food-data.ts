@@ -541,33 +541,33 @@ export function getPackageItems(
 ): Record<string, number> {
   const limits = {
     classic: {
-      // Menü 1: 4 Salate, 2 Vorspeisen, 2 Hauptspeisen (1 Fisch + 1 Geflügel), 2 Beilagen
-      vorspeisen: 4,
+      // Menü 1: 4 Salate + 2 Vorspeisen, 2 Hauptspeisen (1 Fisch + 1 Geflügel), 4 Beilagen
+      vorspeisen: 6,
       hauptgaenge: 2,
-      fingerfoods: 2,
-      beilagen: 2,
+      fingerfoods: 0,
+      beilagen: 4,
       dips_saucen: 0,
       desserts: 0,
       suppen: 0,
     },
     gold: {
-      // Menü 2: 5 Salate, 2 Vorspeisen, 1 warme Vorspeise, 2 Hauptspeisen (Fisch + Fleisch), 2 Beilagen - ab 25 Personen
-      vorspeisen: 5,
+      // Menü 2: 5 Salate + 2 Vorspeisen, 1 warme Vorspeise, 2 Hauptspeisen, 5 Beilagen, 1 Dessert - ab 25 Personen
+      vorspeisen: 7,
       hauptgaenge: 2,
-      fingerfoods: 3,
-      beilagen: 2,
+      fingerfoods: 1,
+      beilagen: 5,
       dips_saucen: 0,
-      desserts: 0,
+      desserts: 1,
       suppen: 0,
     },
     premium: {
-      // Menü 3: 6 Salate, 2 Vorspeisen, 1 warme Vorspeise, 1 Suppe, 3 Hauptspeisen, 3 Beilagen, 1 Dessert - ab 30 Personen
-      vorspeisen: 6,
+      // Menü 3: 6 Salate + 2 Vorspeisen, 1 warme Vorspeise, 1 Suppe, 3 Hauptspeisen, 3 Beilagen, 2 Desserts - ab 30 Personen
+      vorspeisen: 8,
       hauptgaenge: 3,
-      fingerfoods: 2,
+      fingerfoods: 1,
       beilagen: 3,
       dips_saucen: 0,
-      desserts: 1,
+      desserts: 2,
       suppen: 1,
     },
   };

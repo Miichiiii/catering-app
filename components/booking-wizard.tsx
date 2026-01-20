@@ -178,15 +178,16 @@ GESAMTPREIS: ${total.toFixed(2).replace(".", ",")}€ (inkl. MwSt.)
 
 ========================`;
 
-    const subject = `Catering-Anfrage von ${firstName} ${lastName} - ${packageName.toUpperCase()}`;
-    const mailtoLink = `mailto:michael.medvidov@dci-student.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    // WhatsApp-Nachricht erstellen
+    const whatsappMessage = encodeURIComponent(emailBody);
+    const whatsappLink = `https://api.whatsapp.com/send?phone=4915678443874&text=${whatsappMessage}`;
 
-    // Öffne Email-Programm
-    window.location.href = mailtoLink;
+    // Öffne WhatsApp
+    window.open(whatsappLink, "_blank");
 
     setTimeout(() => {
       alert(
-        "Vielen Dank für Ihre Anfrage! Bitte senden Sie die Email ab, die sich gerade in Ihrem Email-Programm geöffnet hat.",
+        "Vielen Dank für Ihre Anfrage! Ihre Bestellung wurde an WhatsApp gesendet.",
       );
       onClose();
     }, 500);
