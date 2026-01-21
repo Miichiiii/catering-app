@@ -78,9 +78,9 @@ export default function BookingWizard({
   ];
 
   const basePrices = {
-    classic: 34.9,
-    gold: 38.9,
-    premium: 46.9,
+    classic: 50,
+    gold: 60,
+    premium: 80,
   };
 
   const servicefee = guestCount && guestCount <= 20 ? 40.0 : 0;

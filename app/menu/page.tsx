@@ -25,7 +25,7 @@ export default function MenuPage() {
     {
       name: "Klassik Menü",
       price: "50,00€ p.P.",
-      description: "Perfekt für kleinere Veranstaltungen",
+      description: "Ab 20 Personen • Perfekt für kleinere Veranstaltungen",
       color: "from-blue-500/20 to-blue-600/20",
       sections: [
         {
@@ -137,7 +137,7 @@ export default function MenuPage() {
     {
       name: "Premium Menü",
       price: "80,00€ p.P.",
-      description: "Ab 30 Personen • Das volle kulinarische Erlebnis",
+      description: "Ab 30 Personen • Das volle kulinarische Erlebnis für Hochzeiten und institutionelle Gesellschaften",
       color: "from-purple-500/20 to-purple-600/20",
       sections: [
         {
