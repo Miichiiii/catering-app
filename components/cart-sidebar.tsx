@@ -6,6 +6,10 @@ interface CartSidebarProps {
   basePrice: number;
   selectedItems: Record<string, string[]>;
   packageLimits: Record<string, number>;
+  selectedDrinks?: Record<string, number>;
+  selectedAccessories?: Record<string, number>;
+  drinksTotal?: number;
+  accessoriesTotal?: number;
   subTotal: number;
   vat: number;
   serviceFee: number;
@@ -18,6 +22,10 @@ export default function CartSidebar({
   basePrice,
   selectedItems,
   packageLimits,
+  selectedDrinks,
+  selectedAccessories,
+  drinksTotal = 0,
+  accessoriesTotal = 0,
   subTotal,
   vat,
   serviceFee,
@@ -85,6 +93,24 @@ export default function CartSidebar({
             <div className="text-lg font-bold">
               {serviceFee.toFixed(2).replace(".", ",")}€
             </div>
+          </div>
+        )}
+
+        {/* Drinks & Accessories */}
+        {(drinksTotal > 0 || accessoriesTotal > 0) && (
+          <div className="mb-6 pb-6 border-b border-accent-foreground/20">
+            {drinksTotal > 0 && (
+              <div className="flex justify-between text-sm mb-2">
+                <span>Getränke</span>
+                <span>{drinksTotal.toFixed(2).replace(".", ",")}€</span>
+              </div>
+            )}
+            {accessoriesTotal > 0 && (
+              <div className="flex justify-between text-sm">
+                <span>Zubehör</span>
+                <span>{accessoriesTotal.toFixed(2).replace(".", ",")}€</span>
+              </div>
+            )}
           </div>
         )}
 

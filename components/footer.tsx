@@ -1,34 +1,20 @@
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-foreground text-background py-16 px-4 md:px-6 lg:px-8">
+    <footer
+      id="footer"
+      className="bg-foreground text-background py-16 px-4 md:px-6 lg:px-8"
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Newsletter */}
-          <div className="md:col-span-2">
-            <h3 className="font-bold mb-4 text-lg">Abonniere unseren Newsletter 💌</h3>
-            <p className="text-sm mb-4">
-              Erhalten Sie exklusive Angebote, köstliche Menü-Inspirationen und spannende Neuigkeiten rund um Shemesh
-              direkt in Ihr Postfach!
-            </p>
-            <div className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Deine E-Mail"
-                className="bg-background text-foreground border-background"
-              />
-              <Button className="bg-accent hover:opacity-90 text-accent-foreground">Abonnieren</Button>
-            </div>
-            <p className="text-xs mt-2">* Sie können jederzeit deabonnieren.</p>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Company Info */}
           <div>
             <h4 className="font-bold mb-4">Shemesh Restaurant & Bar</h4>
             <p className="text-sm">
-              Authentische kulinarische Vielfalt. Tradition trifft auf Handwerk – für dein perfektes Event.
+              Authentische kulinarische Vielfalt. Tradition trifft auf Handwerk
+              – für dein perfektes Event.
             </p>
           </div>
 
@@ -76,7 +62,10 @@ export default function Footer() {
               </p>
               <p className="text-sm">
                 Kontakt:{" "}
-                <a href="mailto:info@shemesh-restaurant.de" className="hover:opacity-75">
+                <a
+                  href="mailto:info@shemesh-restaurant.de"
+                  className="hover:opacity-75"
+                >
                   info@shemesh-restaurant.de
                 </a>
               </p>
@@ -116,5 +105,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

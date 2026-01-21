@@ -10,6 +10,8 @@ import DateStep from "./wizard-steps/date-step";
 import DeliveryInfoStep from "./wizard-steps/delivery-info-step";
 import AllergyStep from "./wizard-steps/allergy-step";
 import FoodSelectionStep from "./wizard-steps/food-selection-step";
+import DrinksStep from "./wizard-steps/drinks-step";
+import AccessoriesStep from "./wizard-steps/accessories-step";
 import CheckoutStep from "./wizard-steps/checkout-step";
 import CartSidebar from "./cart-sidebar";
 import { getPackageItems, foodItems } from "@/lib/food-data";
@@ -46,6 +48,12 @@ export default function BookingWizard({
     desserts: [],
     suppen: [],
   });
+  const [selectedDrinks, setSelectedDrinks] = useState<Record<string, number>>(
+    {},
+  );
+  const [selectedAccessories, setSelectedAccessories] = useState<
+    Record<string, number>
+  >({});
 
   // Checkout States
   const [isCompany, setIsCompany] = useState(false);
@@ -61,21 +69,56 @@ export default function BookingWizard({
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
 
   const packageLimits = getPackageItems(packageName);
-  const steps = [
+
+  // Alle möglichen Schritte definieren
+  const allSteps = [
     "Event-Art",
     "Postleitzahl",
     "Gästeanzahl",
     "Wunschtermin",
-    "Lieferinformationen",
-    "Allergien",
     "Vorspeisen",
     "Hauptgänge",
     "Fingerfoods",
     "Beilagen",
     "Suppen",
     "Desserts",
+    "Getränke",
+    "Zubehör",
+    "Lieferinformationen",
+    "Allergien",
     "Checkout",
   ];
+
+  // Nur Schritte anzeigen, die nicht "0 von 0" haben
+  const steps = allSteps.filter((step) => {
+    const categoryKey = step
+      .toLowerCase()
+      .replace(/ä/g, "ae")
+      .replace(/ö/g, "oe")
+      .replace(/ü/g, "ue")
+      .replace(/ & /g, "_")
+      .replace(/ /g, "_");
+
+    // Immer diese Schritte anzeigen
+    const alwaysShow = [
+      "event-art",
+      "postleitzahl",
+      "gaesteanzahl",
+      "wunschtermin",
+      "getraenke",
+      "zubehoer",
+      "lieferinformationen",
+      "allergien",
+      "checkout",
+    ];
+    if (alwaysShow.includes(categoryKey)) {
+      return true;
+    }
+
+    // Food-Selection Schritte nur anzeigen, wenn limit > 0
+    const limit = packageLimits[categoryKey as keyof typeof packageLimits];
+    return limit !== undefined && limit > 0;
+  });
 
   const basePrices = {
     classic: 50,
@@ -83,8 +126,52 @@ export default function BookingWizard({
     premium: 80,
   };
 
+  // Berechne Getränke-Kosten
+  const drinksTotal = Object.entries(selectedDrinks).reduce(
+    (sum, [drinkId, quantity]) => {
+      // Finde den Preis des Getränks
+      const drink = [
+        { id: "mineralwasser-still", price: 42.9 },
+        { id: "mineralwasser-sprudel", price: 42.9 },
+        { id: "coca-cola", price: 45.9 },
+        { id: "coca-cola-zero", price: 45.9 },
+        { id: "fanta-orange", price: 45.9 },
+        { id: "sprite", price: 45.9 },
+        { id: "apfelschorle", price: 48.0 },
+        { id: "orangensaft", price: 48.0 },
+        { id: "fassbrause-zitrone", price: 49.9 },
+      ].find((d) => d.id === drinkId);
+
+      return sum + (drink ? drink.price * quantity : 0);
+    },
+    0,
+  );
+
+  // Berechne Zubehör-Kosten
+  const accessoriesTotal = Object.entries(selectedAccessories).reduce(
+    (sum, [accessoryId, quantity]) => {
+      // Finde den Preis des Zubehörs
+      const accessory = [
+        { id: "speiseteller-besteck-30", price: 84.9 },
+        { id: "suppenschuessel-loeffel-30", price: 65.9 },
+        { id: "dessertteller-besteck-30", price: 65.9 },
+        { id: "aufbau-abholung", price: 95.2 },
+        { id: "buffet-deko-podeste", price: 239.9 },
+        { id: "tischdecke", price: 20.0 },
+        { id: "buffet-deko-detail", price: 189.9 },
+        { id: "buffet-praesentation-ebenen", price: 289.9 },
+      ].find((a) => a.id === accessoryId);
+
+      return sum + (accessory ? accessory.price * quantity : 0);
+    },
+    0,
+  );
+
   const servicefee = guestCount && guestCount <= 20 ? 40.0 : 0;
-  const subTotal = (guestCount || 0) * basePrices[packageName];
+  const subTotal =
+    (guestCount || 0) * basePrices[packageName] +
+    drinksTotal +
+    accessoriesTotal;
   const vat = subTotal * 0.07;
   const total = subTotal + vat + servicefee;
 
@@ -138,30 +225,166 @@ export default function BookingWizard({
       return result || "\nKeine Gerichte ausgewählt";
     };
 
+    // Formatiere ausgewählte Getränke
+    const formatDrinks = () => {
+      const drinks = [
+        {
+          id: "mineralwasser-still",
+          name: "Mineralwasser Still",
+          description: "24x Flaschen 0,25l inkl. 5,10€ Pfand",
+          price: 42.9,
+        },
+        {
+          id: "mineralwasser-sprudel",
+          name: "Mineralwasser Sprudel",
+          description: "24x Flaschen 0,25l inkl. 5,10€ Pfand",
+          price: 42.9,
+        },
+        {
+          id: "coca-cola",
+          name: "Coca Cola",
+          description: "24x Flaschen 0,33l inkl. 5,10€ Pfand",
+          price: 45.9,
+        },
+        {
+          id: "coca-cola-zero",
+          name: "Coca Cola Zero",
+          description: "24x Flaschen 0,33l inkl. 5,10€ Pfand",
+          price: 45.9,
+        },
+        {
+          id: "fanta-orange",
+          name: "Fanta Orange",
+          description: "24x Flaschen 0,33l inkl. 5,10€ Pfand",
+          price: 45.9,
+        },
+        {
+          id: "sprite",
+          name: "Sprite",
+          description: "24x Flaschen 0,33l inkl. 5,10€ Pfand",
+          price: 45.9,
+        },
+        {
+          id: "apfelschorle",
+          name: "Apfelschorle",
+          description: "24x Flaschen 0,33l inkl. 5,10€ Pfand",
+          price: 48.0,
+        },
+        {
+          id: "orangensaft",
+          name: "Orangensaft",
+          description: "6x Flaschen 1l inkl. 1,50€ Pfand",
+          price: 48.0,
+        },
+        {
+          id: "fassbrause-zitrone",
+          name: "Fassbrause Zitrone",
+          description: "24x Flaschen 0,33l inkl. 5,10€ Pfand",
+          price: 49.9,
+        },
+      ];
+
+      let result = "";
+      Object.entries(selectedDrinks).forEach(([drinkId, quantity]) => {
+        if (quantity > 0) {
+          const drink = drinks.find((d) => d.id === drinkId);
+          if (drink) {
+            result += `  - ${quantity}x ${drink.name} (${drink.description}) - ${(drink.price * quantity).toFixed(2).replace(".", ",")}€\n`;
+          }
+        }
+      });
+      return result || "  Keine Getränke ausgewählt\n";
+    };
+
+    // Formatiere ausgewähltes Zubehör
+    const formatAccessories = () => {
+      const accessories = [
+        {
+          id: "speiseteller-besteck-30",
+          name: "Speiseteller & Besteck 30er Set",
+          price: 84.9,
+        },
+        {
+          id: "suppenschuessel-loeffel-30",
+          name: "Suppenschüssel & Löffel 30er Set",
+          price: 65.9,
+        },
+        {
+          id: "dessertteller-besteck-30",
+          name: "Dessertteller & Besteck 30er Set",
+          price: 65.9,
+        },
+        { id: "aufbau-abholung", name: "Aufbau/Abholung", price: 95.2 },
+        {
+          id: "buffet-deko-podeste",
+          name: "Elegante Buffetdekoration mit weißen Podesten",
+          price: 239.9,
+        },
+        { id: "tischdecke", name: "Tischdecke", price: 20.0 },
+        {
+          id: "buffet-deko-detail",
+          name: "Buffetdekoration mit Liebe zum Detail",
+          price: 189.9,
+        },
+        {
+          id: "buffet-praesentation-ebenen",
+          name: "Stilvolle Buffetpräsentation auf mehreren Ebenen",
+          price: 289.9,
+        },
+      ];
+
+      let result = "";
+      Object.entries(selectedAccessories).forEach(([accessoryId, quantity]) => {
+        if (quantity > 0) {
+          const accessory = accessories.find((a) => a.id === accessoryId);
+          if (accessory) {
+            result += `  - ${quantity}x ${accessory.name} - ${(accessory.price * quantity).toFixed(2).replace(".", ",")}€\n`;
+          }
+        }
+      });
+      return result || "  Kein Zubehör ausgewählt\n";
+    };
+
     // Erstelle Email-Inhalt
     const emailBody = `NEUE CATERING-ANFRAGE
 ========================
 
 MENÜ-PAKET: ${packageName.toUpperCase()}
 Anzahl Gäste: ${guestCount}
+Basispreis: ${(guestCount || 0) * basePrices[packageName]}€
 
 VERANSTALTUNG
 -------------
 Art: ${eventType || "Nicht angegeben"}
 Datum: ${eventDate || "Nicht angegeben"}
 Uhrzeit: ${eventStart || "Nicht angegeben"}
+Gewünschte Lieferzeit: ${deliveryTime || "Nicht angegeben"}
 Ort: ${location || "Nicht angegeben"}
 
 LIEFERADRESSE
 -------------
 Straße: ${streetName} ${streetNumber}
-Zusatz: ${locationName}
+Ortsbezeichnung: ${locationName || "Nicht angegeben"}
 
 AUSGEWÄHLTE GERICHTE${formatItems()}
+
+GETRÄNKE
+--------
+${formatDrinks()}
+Getränke Gesamt: ${drinksTotal.toFixed(2).replace(".", ",")}€
+
+ZUBEHÖR
+-------
+${formatAccessories()}
+Zubehör Gesamt: ${accessoriesTotal.toFixed(2).replace(".", ",")}€
 
 ALLERGIEN
 ---------
 ${selectedAllergies.length > 0 ? selectedAllergies.join(", ") : "Keine"}
+
+BESONDERE WÜNSCHE / ANMERKUNGEN
+-------------------------------
+${remarks || "Keine"}
 
 KUNDENDATEN
 -----------
@@ -174,7 +397,16 @@ Rechnungsadresse:
 ${billingStreet} ${billingHouseNumber}
 ${billingZipCode} ${billingCity}
 
-GESAMTPREIS: ${total.toFixed(2).replace(".", ",")}€ (inkl. MwSt.)
+PREISÜBERSICHT
+--------------
+Menü (${guestCount} Personen x ${basePrices[packageName]}€): ${((guestCount || 0) * basePrices[packageName]).toFixed(2).replace(".", ",")}€
+${drinksTotal > 0 ? `Getränke: ${drinksTotal.toFixed(2).replace(".", ",")}€` : ""}
+${accessoriesTotal > 0 ? `Zubehör: ${accessoriesTotal.toFixed(2).replace(".", ",")}€` : ""}
+${servicefee > 0 ? `Servicegebühr (bis 20 Personen): ${servicefee.toFixed(2).replace(".", ",")}€` : ""}
+Netto: ${subTotal.toFixed(2).replace(".", ",")}€
+MwSt. 7%: ${vat.toFixed(2).replace(".", ",")}€
+---
+GESAMTPREIS BRUTTO: ${total.toFixed(2).replace(".", ",")}€
 
 ========================`;
 
@@ -267,19 +499,19 @@ GESAMTPREIS: ${total.toFixed(2).replace(".", ",")}€ (inkl. MwSt.)
 
             {/* Step Content */}
             <Card className="p-8 mb-8">
-              {currentStep === 0 && (
+              {steps[currentStep] === "Event-Art" && (
                 <EventTypeStep selected={eventType} onChange={setEventType} />
               )}
-              {currentStep === 1 && (
+              {steps[currentStep] === "Postleitzahl" && (
                 <LocationStep value={location} onChange={setLocation} />
               )}
-              {currentStep === 2 && (
+              {steps[currentStep] === "Gästeanzahl" && (
                 <GuestCountStep value={guestCount} onChange={setGuestCount} />
               )}
-              {currentStep === 3 && (
+              {steps[currentStep] === "Wunschtermin" && (
                 <DateStep value={eventDate} onChange={setEventDate} />
               )}
-              {currentStep === 4 && (
+              {steps[currentStep] === "Lieferinformationen" && (
                 <DeliveryInfoStep
                   eventType={eventType}
                   location={location}
@@ -297,13 +529,14 @@ GESAMTPREIS: ${total.toFixed(2).replace(".", ",")}€ (inkl. MwSt.)
                   onRemarksChange={setRemarks}
                 />
               )}
-              {currentStep === 5 && (
-                <AllergyStep
-                  selectedAllergies={selectedAllergies}
-                  onToggleAllergy={toggleAllergy}
-                />
-              )}
-              {currentStep >= 6 && currentStep <= 11 && (
+              {[
+                "Vorspeisen",
+                "Hauptgänge",
+                "Fingerfoods",
+                "Beilagen",
+                "Suppen",
+                "Desserts",
+              ].includes(steps[currentStep]) && (
                 <FoodSelectionStep
                   category={steps[currentStep]}
                   packageName={packageName}
@@ -334,7 +567,25 @@ GESAMTPREIS: ${total.toFixed(2).replace(".", ",")}€ (inkl. MwSt.)
                   }
                 />
               )}
-              {currentStep === 12 && (
+              {steps[currentStep] === "Getränke" && (
+                <DrinksStep
+                  selectedDrinks={selectedDrinks}
+                  onDrinksChange={setSelectedDrinks}
+                />
+              )}
+              {steps[currentStep] === "Zubehör" && (
+                <AccessoriesStep
+                  selectedAccessories={selectedAccessories}
+                  onAccessoriesChange={setSelectedAccessories}
+                />
+              )}
+              {steps[currentStep] === "Allergien" && (
+                <AllergyStep
+                  selectedAllergies={selectedAllergies}
+                  onToggleAllergy={toggleAllergy}
+                />
+              )}
+              {steps[currentStep] === "Checkout" && (
                 <CheckoutStep
                   isCompany={isCompany}
                   firstName={firstName}
@@ -398,6 +649,10 @@ GESAMTPREIS: ${total.toFixed(2).replace(".", ",")}€ (inkl. MwSt.)
             basePrice={basePrices[packageName]}
             selectedItems={selectedItems}
             packageLimits={packageLimits}
+            selectedDrinks={selectedDrinks}
+            selectedAccessories={selectedAccessories}
+            drinksTotal={drinksTotal}
+            accessoriesTotal={accessoriesTotal}
             subTotal={subTotal}
             vat={vat}
             serviceFee={servicefee}

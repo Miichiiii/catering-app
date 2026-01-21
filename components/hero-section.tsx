@@ -16,18 +16,17 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
   return (
     <section
       id="hero"
-      className="relative py-24 px-4 md:px-6 lg:px-8 overflow-hidden"
+      className="relative py-24 px-4 md:px-6 lg:px-8 overflow-hidden bg-background"
     >
-      {/* Background Image with Overlay */}
+      {/* Background Image with Overlay - Making it much lighter */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/dishes/grillplatte.jpg"
           alt="Catering Background"
           fill
-          className="object-cover"
+          className="object-cover opacity-5"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -62,12 +61,11 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col md:flex-row gap-4 justify-center"
           >
-            <Button
-              onClick={() => onSelectPackage("gold")}
-              className="px-8 py-6 text-lg bg-primary hover:opacity-90 text-primary-foreground hover:scale-105 transition-transform"
-            >
-              Jetzt Catering anfragen
-            </Button>
+            <Link href="/gerichte">
+              <Button className="px-8 py-6 text-lg bg-primary hover:opacity-90 text-primary-foreground hover:scale-105 transition-transform">
+                Gerichte ansehen
+              </Button>
+            </Link>
             <Link href="/menu">
               <Button
                 variant="outline"
