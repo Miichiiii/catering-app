@@ -12,7 +12,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative py-20 px-4 md:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-        
+
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,8 @@ export default function AboutPage() {
               Über uns
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Die Geschichte hinter Slava Baraev Catering und unserer Leidenschaft für koschere Kulinarik
+              Die Geschichte hinter Slava Baraev Catering und unserer
+              Leidenschaft für koschere Kulinarik
             </p>
           </motion.div>
 
@@ -40,15 +41,17 @@ export default function AboutPage() {
                 Tradition trifft Innovation
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Slava Baraev Catering steht für höchste kulinarische Qualität und authentische 
-                koschere Küche. Mit jahrelanger Erfahrung in der gehobenen Gastronomie und einer 
-                tiefen Verbundenheit zu traditionellen Rezepten aus Israel, Russland, Georgien 
-                und der Levante, haben wir uns zum Ziel gesetzt, unvergessliche kulinarische 
-                Erlebnisse zu schaffen.
+                Slava Baraev Catering steht für höchste kulinarische Qualität
+                und authentische koschere Küche. Mit jahrelanger Erfahrung in
+                der gehobenen Gastronomie und einer tiefen Verbundenheit zu
+                traditionellen Rezepten aus Israel, Russland, Georgien und der
+                Levante, haben wir uns zum Ziel gesetzt, unvergessliche
+                kulinarische Erlebnisse zu schaffen.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                In Kooperation mit der Jüdischen Gemeinde Duisburg und unter der Kaschrutaufsicht 
-                der ORD garantieren wir höchste Standards bei der Zubereitung unserer Speisen.
+                In Kooperation mit der Jüdischen Gemeinde Duisburg und unter der
+                Kaschrutaufsicht der ORD garantieren wir höchste Standards bei
+                der Zubereitung unserer Speisen.
               </p>
               <Link href="/menu">
                 <Button className="mt-4" size="lg">
@@ -86,14 +89,17 @@ export default function AboutPage() {
                       Vom Shemesh Restaurant zum Catering-Service
                     </h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                      Slava Baraev, bekannt als der kulinarische Kopf hinter dem renommierten 
-                      Shemesh Restaurant in Düsseldorf, bringt seine Expertise und Leidenschaft 
-                      für authentische koschere Küche nun direkt zu Ihren Veranstaltungen.
+                      Slava Baraev, bekannt als der kulinarische Kopf hinter dem
+                      renommierten Shemesh Restaurant in Düsseldorf, bringt
+                      seine Expertise und Leidenschaft für authentische koschere
+                      Küche nun direkt zu Ihren Veranstaltungen.
                     </p>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                      Das Shemesh Restaurant in Düsseldorf hat sich einen hervorragenden Ruf 
-                      für exzellente israelische und levantinische Küche erarbeitet. Diese 
-                      Erfahrung und Expertise fließt in jeden Aspekt unseres Catering-Services ein.
+                      Das Shemesh Restaurant in Düsseldorf hat sich einen
+                      hervorragenden Ruf für exzellente israelische und
+                      levantinische Küche erarbeitet. Diese Erfahrung und
+                      Expertise fließt in jeden Aspekt unseres Catering-Services
+                      ein.
                     </p>
                   </div>
                   <div className="space-y-4">
@@ -104,15 +110,21 @@ export default function AboutPage() {
                       <ul className="space-y-2 text-muted-foreground">
                         <li className="flex items-start gap-2">
                           <span className="text-primary mt-1">✓</span>
-                          <span>Jahrelange Erfahrung in der gehobenen Gastronomie</span>
+                          <span>
+                            Jahrelange Erfahrung in der gehobenen Gastronomie
+                          </span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-primary mt-1">✓</span>
-                          <span>Verwurzelt in der Düsseldorfer Gastronomieszene</span>
+                          <span>
+                            Verwurzelt in der Düsseldorfer Gastronomieszene
+                          </span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-primary mt-1">✓</span>
-                          <span>Spezialisiert auf authentische koschere Küche</span>
+                          <span>
+                            Spezialisiert auf authentische koschere Küche
+                          </span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-primary mt-1">✓</span>
@@ -141,32 +153,38 @@ export default function AboutPage() {
                 {
                   icon: "🌟",
                   title: "Qualität",
-                  description: "Nur die frischesten Zutaten und höchste Qualitätsstandards",
+                  description:
+                    "Nur die frischesten Zutaten und höchste Qualitätsstandards",
                 },
                 {
                   icon: "✡️",
                   title: "Kaschrut",
-                  description: "Strenge Einhaltung der koscheren Speisegesetze unter Rabbinatsaufsicht",
+                  description:
+                    "Strenge Einhaltung der koscheren Speisegesetze unter Rabbinatsaufsicht",
                 },
                 {
                   icon: "🎨",
                   title: "Kreativität",
-                  description: "Innovative Interpretationen traditioneller Gerichte",
+                  description:
+                    "Innovative Interpretationen traditioneller Gerichte",
                 },
                 {
                   icon: "🤝",
                   title: "Service",
-                  description: "Persönliche Betreuung von der Planung bis zur Durchführung",
+                  description:
+                    "Persönliche Betreuung von der Planung bis zur Durchführung",
                 },
                 {
                   icon: "🌍",
                   title: "Vielfalt",
-                  description: "Kulinarische Einflüsse aus Israel, Russland, Georgien und der Levante",
+                  description:
+                    "Kulinarische Einflüsse aus Israel, Russland, Georgien und der Levante",
                 },
                 {
                   icon: "💚",
                   title: "Leidenschaft",
-                  description: "Mit Herz und Seele bei jeder einzelnen Veranstaltung",
+                  description:
+                    "Mit Herz und Seele bei jeder einzelnen Veranstaltung",
                 },
               ].map((value, index) => (
                 <motion.div
@@ -200,8 +218,8 @@ export default function AboutPage() {
                   Kaschrutaufsicht
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-                  Alle unsere Speisen werden unter strenger Kaschrutaufsicht der ORD 
-                  (Orthodoxe Rabbinerkonferenz Deutschland) zubereitet.
+                  Alle unsere Speisen werden unter strenger Kaschrutaufsicht der
+                  ORD (Orthodoxe Rabbinerkonferenz Deutschland) zubereitet.
                 </p>
                 <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                   <div className="bg-primary/5 rounded-lg p-6 border border-primary/20">
@@ -240,7 +258,8 @@ export default function AboutPage() {
                 Wo wir tätig sind
               </h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Von Düsseldorf aus beliefern wir Veranstaltungen in ganz Deutschland
+                Von Düsseldorf aus beliefern wir Veranstaltungen in ganz
+                Deutschland
               </p>
               <div className="grid md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
@@ -279,8 +298,8 @@ export default function AboutPage() {
               Bereit für Ihr kulinarisches Erlebnis?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Kontaktieren Sie uns noch heute für eine kostenlose Beratung und lassen Sie 
-              uns gemeinsam Ihr perfektes Menü zusammenstellen.
+              Kontaktieren Sie uns noch heute für eine kostenlose Beratung und
+              lassen Sie uns gemeinsam Ihr perfektes Menü zusammenstellen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/menu">
