@@ -1,153 +1,310 @@
 "use client";
 
-import { foodItems } from "@/lib/food-data";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function MenuPage() {
-  const menuConfigurations = [
+  const menus = [
     {
-      name: "Klassik Menü",
-      price: "50,00€ p.P.",
-      description: "Perfekt für kleinere Veranstaltungen",
-      color: "from-blue-500/20 to-blue-600/20",
+      id: "menu1",
+      title: "Klassik Menü",
+      price: "50,00 €",
+      pricePerPerson: true,
+      description: "Ab 20 Personen • Perfekt für kleinere Veranstaltungen",
+      includes: [
+        "4 Salate zur Auswahl",
+        "1 Vorspeise",
+        "Hauptspeisen zur Auswahl",
+        "Fisch + 1× Hähnchenfleisch",
+        "2 Beilagen",
+      ],
       sections: [
         {
-          title: "Salate",
-          count: 4,
-          items: foodItems.vorspeisen.filter((item) =>
-            item.availableIn?.includes("classic"),
-          ),
+          title: "Salate – Auswahl Menü 1",
+          items: [
+            "Rote-Bete mit Salzgurken, Olivenöl, frischen Kräutern",
+            "Rote-Bete mit Birnen, Meerrettich, Olivenöl, frischem Koriander",
+            "Süßkartoffeln mit Rote Bete, Kichererbsen",
+            "Möhrensalat",
+            "Couscous mit Paprika, Gurken und frischen Kräutern",
+            "Nudeln nach italienischer Art mit getrockneten Tomaten, Oliven, Provence-Kräutern",
+            "Hummus",
+            "Knusprige Falafel",
+            "Gebackene Süßkartoffeln mit Tahini und Dattelsirup",
+            "Kartoffelsalat nach israelischer Art",
+            "Funcheza-Salat (Glasnudeln mit Paprika, Möhren, Sesam, Koriander)",
+            "Israelischer Salat mit frischem Gemüse und Kräutern",
+            "Weißkohl-/Rotkohlsalat mit Erbsen",
+            "Matbucha nach israelischer Art",
+            "Rote-Bete klassischer Salat mit Pflaumen, Walnüssen, Mayonnaise",
+            "Gartensalat (Spinat, Tomaten, Rucola)",
+          ],
         },
         {
-          title: "Vorspeisen",
-          count: 2,
-          items: foodItems.vorspeisen.filter(
-            (item) =>
-              item.availableIn?.includes("classic") &&
-              item.category === "Vorspeisen" &&
-              !item.description.includes("Salat"),
-          ),
+          title: "Vorspeisen – Auswahl Menü 1",
+          items: ["Gemüseauflauf (Gemüse nach Wahl)", "Nudelauflauf"],
         },
         {
-          title: "Hauptgänge",
-          count: 2,
-          subtitle: "1 Fischgericht + 1 Geflügelgericht",
-          items: foodItems.hauptgaenge.filter((item) =>
-            item.availableIn?.includes("classic"),
-          ),
+          title: "Hauptspeisen – Auswahl Menü 1",
+          subsections: [
+            {
+              subtitle: "Fisch:",
+              items: [
+                "Zanderfilet in Tomatensauce nach israelischer Art",
+                "Lachs in Kokos-Limetten-Sauce",
+                "Dorade in Paprika-Weinsauce",
+              ],
+            },
+            {
+              subtitle: "Geflügel:",
+              items: [
+                "Pargiot",
+                "Gebackene Hähnchenkeule in Tomatensauce",
+                "Hähnchen- / Puten-Geschnetzeltes mit Kokos-Zitronen-Vinaigrette",
+              ],
+            },
+          ],
         },
         {
-          title: "Beilagen",
-          count: 2,
-          items: foodItems.beilagen.filter((item) =>
-            item.availableIn?.includes("classic"),
-          ),
+          title: "Beilagen – Auswahl Menü 1",
+          items: [
+            "Gemüsereis",
+            "Gebackene Kartoffeln",
+            "Gelber Reis",
+            "Nudeln",
+          ],
         },
       ],
+      color: "from-primary/10 to-primary/20",
     },
     {
-      name: "Shemesh Gold",
-      price: "60,00€ p.P.",
+      id: "menu2",
+      title: "Shemesh Gold",
+      price: "60,00 €",
+      pricePerPerson: true,
       description: "Ab 25 Personen • Unsere beliebteste Wahl",
+      includes: [
+        "5 Salate",
+        "2 kalte Vorspeisen",
+        "1 warme Vorspeise",
+        "2 Hauptspeisen (Fisch + Fleisch)",
+        "Dessert (Obst)",
+      ],
+      sections: [
+        {
+          title: "Salate – Menü 2",
+          items: [
+            "Rote-Bete mit Salzgurken, Olivenöl, frischen Kräutern",
+            "Rote-Bete mit Birnen, Meerrettich, Olivenöl, frischem Koriander",
+            "Süßkartoffeln mit Rote Bete, Kichererbsen",
+            "Möhrensalat",
+            "Hering unter Rote-Bete-Mantel",
+            "Couscous mit Paprika, Gurken und frischen Kräutern",
+            "Vinaigrette-Salat",
+            "Weißer-Bohnen-Salat",
+            "Nudeln nach italienischer Art mit getrockneten Tomaten, Oliven, Provence-Kräutern",
+            "Hummus",
+            "Knusprige Falafel",
+            "Gebackene Süßkartoffeln mit Tahini und Dattelsirup",
+            "Kartoffelsalat nach israelischer Art",
+            "Funcheza-Salat (Glasnudeln mit Paprika, Möhren, Sesam, Koriander)",
+            "Gebackene Auberginen mit Kichererbsen, Paprika, Basilikum, Knoblauch, italienischen Kräutern",
+            "Israelischer Salat mit frischem Gemüse und Kräutern",
+            "Weißkohl-/Rotkohlsalat mit Erbsen",
+            "Matbucha nach israelischer Art",
+            "Gebackene Auberginen (ganz) mit frisch geriebenen Tomaten und Kräutern",
+            "Rote-Bete klassischer Salat mit Pflaumen, Walnüssen, Mayonnaise",
+            "Gartensalat (Spinat, Tomaten, Rucola)",
+            "Jüdischer Salat (gebackenes Saisongemüse, frische Tomaten, Kräuter, Knoblauch, Olivenöl)",
+          ],
+        },
+        {
+          title: "Kalte Vorspeisen – Menü 2",
+          items: [
+            "Sauté-Auberginenscheiben mit Mayonnaise und frischen Tomaten",
+            "Eingelegtes Gemüse nach israelischer Art",
+            "Gefüllte Auberginen mit Möhren nach koreanischer Art",
+            "Fischplatte",
+            "Gefüllter Fisch als Ganzes (auf Anfrage, Aufpreis)",
+            "Eingelegte Champignons",
+            "Antipasti",
+            "Matjes mit Kartoffeln",
+            "Gemüseauflauf nach Wahl",
+            "Nudelauflauf",
+          ],
+        },
+        {
+          title: "Warme Vorspeisen – Menü 2",
+          items: [
+            "Blini mit Kartoffeln",
+            "Blini mit Hähnchenfleisch",
+            "Blini mit Pilzen",
+            "Burekas mit Kartoffeln",
+          ],
+        },
+        {
+          title: "Hauptspeisen – Menü 2",
+          subsections: [
+            {
+              subtitle: "Fisch:",
+              items: [
+                "Lachsfiletstücke in Kokos-Limetten-Sauce",
+                "Dorade in Paprika-Weinsauce",
+                "Zanderfilet in Tomatensauce",
+              ],
+            },
+            {
+              subtitle: "Fleisch & Geflügel:",
+              items: [
+                "Hähnchenschenkel in Tomatensauce",
+                "Pargiot",
+                "Hähnchen- / Puten-Geschnetzeltes",
+                "Hähnchen-Chickenwings",
+                "Rindergulasch",
+                "Beef Stroganoff",
+                "Rinderbraten",
+                "Rinderbällchen (Frikadellen) in Tomatensauce",
+                "Plov nach usbekischer Art",
+                "Bolognese",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Beilagen – Menü 2",
+          items: [
+            "Gemüsereis",
+            "Gebackene Kartoffeln",
+            "Gelber Reis",
+            "Nudeln",
+            "Drillinge (Salzkartoffeln)",
+          ],
+        },
+        {
+          title: "Dessert",
+          items: ["Saisonobst"],
+        },
+      ],
       color: "from-amber-500/20 to-amber-600/20",
       featured: true,
-      sections: [
-        {
-          title: "Salate",
-          count: 5,
-          items: foodItems.vorspeisen.filter((item) =>
-            item.availableIn?.includes("gold"),
-          ),
-        },
-        {
-          title: "Kalte Vorspeisen",
-          count: 2,
-          items: foodItems.vorspeisen.filter(
-            (item) =>
-              item.availableIn?.includes("gold") &&
-              item.category === "Vorspeisen",
-          ),
-        },
-        {
-          title: "Warme Vorspeisen",
-          count: 1,
-          items: foodItems.fingerfoods.filter((item) =>
-            item.availableIn?.includes("gold"),
-          ),
-        },
-        {
-          title: "Hauptgänge",
-          count: 2,
-          items: foodItems.hauptgaenge.filter((item) =>
-            item.availableIn?.includes("gold"),
-          ),
-        },
-        {
-          title: "Beilagen",
-          count: 2,
-          items: foodItems.beilagen.filter((item) =>
-            item.availableIn?.includes("gold"),
-          ),
-        },
-        {
-          title: "Desserts",
-          count: 1,
-          items: foodItems.desserts.filter((item) =>
-            item.availableIn?.includes("gold"),
-          ),
-        },
-      ],
     },
     {
-      name: "Premium Menü",
-      price: "80,00€ p.P.",
-      description: "Ab 30 Personen • Das volle kulinarische Erlebnis",
-      color: "from-purple-500/20 to-purple-600/20",
+      id: "menu3",
+      title: "Premium Menü",
+      price: "80,00 €",
+      pricePerPerson: true,
+      description: "Für größere institutionelle Events und Hochzeiten",
+      includes: [
+        "5 Salate · 2 Vorspeisen · 1 warme Vorspeise · 1 Suppe · 3 Hauptspeisen · 3 Beilagen · Dessert",
+      ],
       sections: [
         {
-          title: "Salate",
-          count: 6,
-          items: foodItems.vorspeisen.filter((item) =>
-            item.availableIn?.includes("premium"),
-          ),
+          title: "Salate – Auswahl",
+          items: [
+            "Rote-Bete mit Salzgurken, Olivenöl und frischen Kräutern",
+            "Rote-Bete mit Birnen, Meerrettich, Olivenöl und frischem Koriander",
+            "Süßkartoffeln mit Rote Bete und Kichererbsen",
+            "Möhrensalat",
+            "Hering unter Rote-Bete-Mantel",
+            "Couscous mit Paprika, Gurken und frischen Kräutern",
+            "Vinaigrette-Salat",
+            "Weißer-Bohnen-Salat",
+            "Nudeln nach italienischer Art mit getrockneten Tomaten, Oliven und Provence-Kräutern",
+            "Hummus",
+            "Knusprige Falafel",
+            "Gebackene Süßkartoffeln mit Tahini und Dattelsirup",
+            "Kartoffelsalat nach israelischer Art",
+            "Funcheza-Salat (Glasnudeln mit Paprika, Möhren, Sesam und Koriander)",
+            "Gebackene Auberginen mit Kichererbsen, Paprika, Basilikum, Knoblauch und italienischen Kräutern",
+            "Israelischer Salat mit frischem Gemüse und Kräutern",
+            "Weißkohl- / Rotkohlsalat mit Erbsen",
+            "Matbucha nach israelischer Art",
+            "Gebackene Auberginen (ganz) mit frisch geriebenen Tomaten und Kräutern",
+            "Rote-Bete klassischer Salat mit Pflaumen, Walnüssen und Mayonnaise",
+            "Gartensalat (Spinat, Tomaten, Rucola)",
+            "Jüdischer Salat (gebackenes Saisongemüse, frische Tomaten, frische Kräuter, Knoblauch und Olivenöl)",
+          ],
         },
         {
-          title: "Warme Vorspeisen",
-          count: 2,
-          items: foodItems.fingerfoods.filter((item) =>
-            item.availableIn?.includes("premium"),
-          ),
+          title: "Kalte Vorspeisen – Auswahl",
+          items: [
+            "Sauté-Auberginenscheiben mit Mayonnaise und frischen Tomaten",
+            "Eingelegtes Gemüse nach israelischer Art",
+            "Gefüllte Auberginen mit Möhren nach koreanischer Art",
+            "Fischplatte",
+            "Gefüllter Fisch als Ganzes (auf Anfrage, gegen Aufpreis)",
+            "Eingelegte Champignons",
+            "Antipasti",
+            "Matjes mit Kartoffeln",
+            "Gemüseauflauf nach Wahl",
+            "Nudelauflauf",
+          ],
         },
         {
-          title: "Suppen",
-          count: 1,
-          items: foodItems.suppen,
+          title: "Warme Vorspeisen – Auswahl",
+          items: [
+            "Blini mit Kartoffeln",
+            "Blini mit Hähnchenfleisch",
+            "Blini mit Pilzen",
+            "Burekas mit Kartoffeln",
+          ],
         },
         {
-          title: "Hauptgänge",
-          count: 3,
-          items: foodItems.hauptgaenge.filter((item) =>
-            item.availableIn?.includes("premium"),
-          ),
+          title: "Suppen – Auswahl",
+          items: [
+            "Kartoffel-Cremesuppe",
+            "Gemüsesuppe",
+            "Vegetarische Nudelsuppe",
+            "Borschtsch (vegetarisch)",
+          ],
         },
         {
-          title: "Beilagen",
-          count: 3,
-          items: foodItems.beilagen.filter((item) =>
-            item.availableIn?.includes("premium"),
-          ),
+          title: "Hauptspeisen – Auswahl",
+          subsections: [
+            {
+              subtitle: "Fischgerichte:",
+              items: [
+                "Lachsfiletstücke in Kokos-Limetten-Sauce",
+                "Dorade in Paprika-Weinsauce",
+                "Zanderfilet in Tomatensauce",
+              ],
+            },
+            {
+              subtitle: "Geflügel- und Fleischgerichte:",
+              items: [
+                "Hähnchenschenkel in Tomatensauce",
+                "Pargiot",
+                "Hähnchen- / Puten-Geschnetzeltes",
+                "Hähnchenflügel (Chicken Wings)",
+                "Rindergulasch",
+                "Beef Stroganoff",
+                "Rinderbraten",
+                "Rinderbällchen (Frikadellen) in Tomatensauce",
+                "Plov nach usbekischer Art",
+                "Bolognese",
+              ],
+            },
+          ],
         },
         {
-          title: "Desserts",
-          count: 1,
-          items: foodItems.desserts.filter((item) =>
-            item.availableIn?.includes("premium"),
-          ),
+          title: "Beilagen – Auswahl",
+          items: [
+            "Gemüsereis",
+            "Gebackene Kartoffeln",
+            "Gelber Reis",
+            "Nudeln",
+            "Drillinge (Salzkartoffeln)",
+            "Gemüse",
+          ],
+        },
+        {
+          title: "Dessert",
+          items: ["Saisonobst", "Gebäck nach Absprache"],
         },
       ],
+      color: "from-primary/10 to-primary/20",
     },
   ];
 
@@ -169,13 +326,13 @@ export default function MenuPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-background">
+      <section className="py-16 px-4 md:px-6 lg:px-8 bg-secondary">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4"
+            className="text-4xl md:text-5xl font-bold mb-4 text-foreground"
           >
             Unsere Menüs
           </motion.h1>
@@ -183,7 +340,7 @@ export default function MenuPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+            className="text-xl max-w-2xl mx-auto text-foreground"
           >
             Entdecken Sie unsere sorgfältig zusammengestellten All-Inclusive
             Menüs mit authentischen Spezialitäten
@@ -193,104 +350,130 @@ export default function MenuPage() {
 
       {/* Menu Sections */}
       <section className="py-16 px-4 md:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-24">
-          {menuConfigurations.map((menu, menuIndex) => (
-            <motion.div
-              key={menu.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: menuIndex * 0.1 }}
-              className="relative"
-            >
-              {/* Menu Header */}
-              <div className="text-center mb-12">
-                {menu.featured && (
-                  <span className="inline-block px-4 py-1 mb-4 text-sm font-semibold text-primary-foreground bg-primary rounded-full">
-                    Beliebt
-                  </span>
-                )}
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                  {menu.name}
-                </h2>
-                <p className="text-lg text-muted-foreground mb-4">
-                  {menu.description}
-                </p>
-                <p className="text-2xl font-bold text-primary">
-                  Ab {menu.price}
-                </p>
-                <p className="text-sm text-muted-foreground">inkl. MwSt.</p>
-              </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {menus.map((menu, menuIndex) => (
+              <motion.div
+                key={menu.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: menuIndex * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="relative"
+              >
+                <Card
+                  className={`p-8 bg-gradient-to-br ${menu.color} border-2 h-full transition-shadow hover:shadow-xl`}
+                >
+                  {/* Menu Header */}
+                  <div className="text-center mb-8">
+                    {menu.featured && (
+                      <span className="inline-block px-4 py-1 mb-4 text-sm font-semibold text-primary-foreground bg-primary rounded-full">
+                        Beliebt
+                      </span>
+                    )}
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
+                      {menu.title} – {menu.price} pro Person
+                      {menu.id === "menu3" ? " (ab 30 Personen)" : ""}
+                    </h2>
+                    {menu.description && (
+                      <p className="text-lg mb-4 text-foreground">
+                        {menu.description}
+                      </p>
+                    )}
+                  </div>
 
-              {/* Menu Sections Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {menu.sections.map((section, sectionIndex) => (
-                  <motion.div
-                    key={section.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.5,
-                      delay: sectionIndex * 0.05,
-                    }}
-                  >
-                    <Card
-                      className={`p-6 h-full bg-gradient-to-br ${menu.color} border-2`}
-                    >
-                      <div className="mb-4">
-                        <h3 className="text-xl font-bold text-foreground mb-1">
+                  {/* Enthalten */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-normal mb-3 text-foreground">
+                      Enthalten:
+                    </h3>
+                    <ul className="list-disc list-inside space-y-1 text-foreground">
+                      {menu.includes.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Menu Sections */}
+                  <div className="space-y-8">
+                    {menu.sections.map((section, sectionIndex) => (
+                      <motion.div
+                        key={sectionIndex}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: sectionIndex * 0.05,
+                        }}
+                      >
+                        <h3 className="text-xl font-normal mb-4 text-foreground">
                           {section.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {section.subtitle
-                            ? section.subtitle
-                            : `Wähle ${section.count} aus:`}
-                        </p>
-                      </div>
-                      <ul className="space-y-3">
-                        {section.items.map((item, itemIndex) => (
-                          <motion.li
-                            key={item.id}
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                              duration: 0.3,
-                              delay: itemIndex * 0.02,
-                            }}
-                            className="border-l-2 border-primary pl-3"
-                          >
-                            <div className="font-medium text-foreground text-sm">
-                              {item.name}
-                            </div>
-                            <div className="text-xs text-muted-foreground">
-                              {item.description}
-                            </div>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
 
-              {/* Divider */}
-              {menuIndex < menuConfigurations.length - 1 && (
-                <div className="mt-16 border-t border-border"></div>
-              )}
-            </motion.div>
-          ))}
+                        {/* Regular items */}
+                        {section.items && (
+                          <ul className="space-y-2 ml-4">
+                            {section.items.map((item, itemIndex) => (
+                              <li
+                                key={itemIndex}
+                                className="border-l-2 border-primary pl-3 text-foreground"
+                              >
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+
+                        {/* Subsections (for Hauptspeisen) */}
+                        {"subsections" in section && section.subsections && (
+                          <div className="space-y-4 ml-4">
+                            {section.subsections.map((subsection, subIndex) => (
+                              <div key={subIndex}>
+                                <h4 className="font-normal mb-2 text-foreground">
+                                  {subsection.subtitle}
+                                </h4>
+                                <ul className="space-y-2 ml-4">
+                                  {subsection.items.map((item, itemIndex) => (
+                                    <li
+                                      key={itemIndex}
+                                      className="border-l-2 border-primary pl-3 text-foreground"
+                                    >
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-10 text-center">
+                    <Link href="/#pricing">
+                      <Button className="px-8 py-6 text-lg bg-primary hover:opacity-90 text-primary-foreground">
+                        {menu.title} bestellen
+                      </Button>
+                    </Link>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-background">
+      <section className="py-16 px-4 md:px-6 lg:px-8 bg-secondary">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">
             Bereit für Ihre Veranstaltung?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-lg mb-8 text-foreground">
             Wählen Sie Ihr Menü und starten Sie jetzt Ihre Catering-Anfrage
           </p>
           <Link href="/#pricing">

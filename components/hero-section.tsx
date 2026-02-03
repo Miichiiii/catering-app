@@ -16,18 +16,17 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
   return (
     <section
       id="hero"
-      className="relative py-24 px-4 md:px-6 lg:px-8 overflow-hidden"
+      className="relative py-24 px-4 md:px-6 lg:px-8 overflow-hidden bg-background"
     >
-      {/* Background Image with Overlay */}
+      {/* Background Image with Overlay - Making it much lighter */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/dishes/grillplatte.jpg"
           alt="Catering Background"
           fill
-          className="object-cover"
+          className="object-cover opacity-5"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -46,28 +45,91 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
           >
             Kulinarische Vielfalt für Ihre perfekte Veranstaltung
           </motion.h1>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance"
+            className="mb-8 max-w-4xl mx-auto space-y-6"
           >
-            Lassen Sie sich von unserer reichhaltigen Auswahl an Spezialitäten
-            aus verschiedenen Kulturen begeistern. Shemesh bringt Geschmack,
-            Tradition und Handwerk zu Ihrem Event nach Düsseldorf.
-          </motion.p>
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+                SLAVA BARAEV CATERING
+              </h2>
+              <p className="text-lg text-muted-foreground italic">
+                in Kooperation mit der Jüdischen Gemeinde Duisburg
+              </p>
+            </div>
+
+            <p className="text-lg text-muted-foreground text-center leading-relaxed">
+              Lassen Sie sich von unserer reichhaltigen Auswahl an koscheren
+              Spezialitäten aus verschiedenen Kulturen begeistern. Slava Baraev
+              Catering vereint Geschmack, Tradition und handwerkliche Perfektion
+              und bringt authentische Kulinarik auf höchstem Niveau zu Ihrem
+              Event – jetzt auch in Düsseldorf und ganz Deutschland.
+            </p>
+
+            <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 text-center">
+              <p className="text-base text-foreground mb-2">
+                <span className="font-semibold">
+                  Unsere Speisen stehen unter Kaschrutaufsicht der ORD
+                </span>
+                <br />
+                durch
+              </p>
+              <p className="text-base text-foreground">
+                Oberrabbiner David Geballe und Oberrabbiner Shimon Lewin
+              </p>
+              <p className="text-sm text-muted-foreground mt-2 italic">
+                Auf Wunsch erfolgt die Aufsicht auch durch Chabad Düsseldorf.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <p className="text-2xl font-semibold text-foreground mb-2">
+                Tradition trifft Geschmack.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Koscheres Catering mit Seele – hochwertig, authentisch und mit
+                Liebe zum Detail.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <p className="text-lg text-muted-foreground mb-3">
+                Ob{" "}
+                <span className="font-semibold text-foreground">
+                  Hochzeiten
+                </span>
+                ,{" "}
+                <span className="font-semibold text-foreground">
+                  Firmenfeiern
+                </span>
+                ,{" "}
+                <span className="font-semibold text-foreground">
+                  Geburtstage
+                </span>
+                ,{" "}
+                <span className="font-semibold text-foreground">
+                  Bar- und Bat-Mizwa
+                </span>{" "}
+                oder viele weitere Anlässe –
+              </p>
+              <p className="text-xl font-semibold text-primary">
+                wir machen Ihr Event zu einem besonderen kulinarischen Erlebnis.
+              </p>
+            </div>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col md:flex-row gap-4 justify-center"
           >
-            <Button
-              onClick={() => onSelectPackage("gold")}
-              className="px-8 py-6 text-lg bg-primary hover:opacity-90 text-primary-foreground hover:scale-105 transition-transform"
-            >
-              Jetzt Catering anfragen
-            </Button>
+            <Link href="/gerichte">
+              <Button className="px-8 py-6 text-lg bg-primary hover:opacity-90 text-primary-foreground hover:scale-105 transition-transform">
+                Gerichte ansehen
+              </Button>
+            </Link>
             <Link href="/menu">
               <Button
                 variant="outline"
