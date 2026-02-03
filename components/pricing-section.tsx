@@ -166,8 +166,15 @@ export default function PricingSection({
             <Button
               variant="outline"
               className="border-foreground text-foreground hover:bg-foreground hover:text-secondary bg-transparent hover:scale-105 transition-transform"
+              asChild
             >
-              Individuelle Beratung
+              <a
+                href={`https://api.whatsapp.com/send?phone=4915678443874&text=${encodeURIComponent("Hallo, ich interessiere mich für eine individuelle Beratung für mein Event.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Individuelle Beratung
+              </a>
             </Button>
           </Card>
         </motion.div>

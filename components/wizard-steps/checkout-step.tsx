@@ -210,41 +210,7 @@ export default function CheckoutStep({
       </div>
 
       {/* Teilen & Freigeben */}
-      <div>
-        <h3 className="text-xl font-bold text-foreground mb-4">Teilen & Freigeben</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Leiten Sie Ihren Warenkorb an Freunde, Kollegen oder als Angebot an Vorgesetzte weiter – zum Ansehen oder Bearbeiten.
-        </p>
-        
-        <Card className="p-4 bg-muted border-muted">
-          <div className="flex items-center gap-2">
-            <Input
-              type="text"
-              value={shareableLink}
-              readOnly
-              className="flex-1 text-foreground bg-background"
-            />
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={handleCopyLink}
-              className="shrink-0"
-            >
-              {copied ? "✓" : <Copy className="h-4 w-4" />}
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="shrink-0"
-            >
-              <Share2 className="h-4 w-4" />
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-2">
-            Link zum Weiterleiten – z.B. an Freunde oder Vorgesetzte.
-          </p>
-        </Card>
-      </div>
+      
 
       {/* Bezahlung */}
       <div>

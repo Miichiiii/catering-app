@@ -15,7 +15,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Olivenöl, frischen Kräutern",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/juedischer-salat.jpg",
+      image: "/images/cateringbilder/Neu/Rotebete mit salzgurken.jpg",
     },
     {
       id: "rote_bete_birnen",
@@ -23,7 +23,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Olivenöl, frischem Koriander",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/juedischer-salat.jpg",
+      image:
+        "/images/cateringbilder/Klassische Rotebete Salat mit Pflaumen und Walnüssen, Mayonnaise.jpeg",
     },
     {
       id: "suesskartoffeln_rote_bete",
@@ -31,7 +32,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Kichererbsen",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/hummus.jpg",
+      image:
+        "/images/cateringbilder/Süßkartoffeln mit Rotebete und Kichererbsen.jpeg",
     },
     {
       id: "moehren_salat",
@@ -39,7 +41,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Frisch und knackig",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/shemesh-salat.jpg",
+      image: "/images/cateringbilder/Mohren Salat.jpeg",
     },
     {
       id: "kus_kus_paprika",
@@ -55,7 +57,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Getrocknete Tomaten, Oliven, Provençer Kräuter",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/shemesh-salat.jpg",
+      image: "/images/cateringbilder/Nudeln nach Italien Art.jpeg",
     },
     {
       id: "hummus",
@@ -63,7 +65,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Cremig und aromatisch",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/hummus.jpg",
+      image: "/images/cateringbilder/Hummus.jpeg",
     },
     {
       id: "falafel",
@@ -71,7 +73,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Frisch frittiert",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/hummus.jpg",
+      image: "/images/cateringbilder/Hummus mit Falafel.jpeg",
     },
     {
       id: "suesskartoffeln_tahini",
@@ -79,7 +81,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Dattelsirup",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/sabich.jpg",
+      image:
+        "/images/cateringbilder/Süßkartoffeln mit Rotebete und Kichererbsen.jpeg",
     },
     {
       id: "kartoffeln_salat_israeli",
@@ -87,7 +90,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Traditionell gewürzt",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/hering-kartoffeln.jpg",
+      image:
+        "/images/cateringbilder/Kartoffeln Salat nach Israelischer Art.jpeg",
     },
     {
       id: "funcheza_salat",
@@ -95,7 +99,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Glasnudeln mit Paprika, Möhren, Sesam, Koriander",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/shemesh-salat.jpg",
+      image: "/images/cateringbilder/Neu/Funcheza Salat.jpg",
     },
     {
       id: "israelischer_salat",
@@ -103,7 +107,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Frisches Gemüse und Kräuter",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/shemesh-salat.jpg",
+      image: "/images/cateringbilder/Israelischer Salat.jpeg",
     },
     {
       id: "weisskohl_rotkohl",
@@ -111,7 +115,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Mit Erbsen",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/eingelegtes-gemuese.jpg",
+      image: "/images/cateringbilder/WeißkohlRotkohl Salat mit Erbsen.jpeg",
     },
     {
       id: "matbucha",
@@ -119,7 +123,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Würzige Paprika-Tomaten-Paste",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/auberginen.jpg",
+      image:
+        "/images/cateringbilder/Auberginen ganz mit frischen Tomaten und Kräutern.jpeg",
     },
     {
       id: "rote_bete_pflaumen",
@@ -127,7 +132,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Pflaumen, Walnuss, Mayonnaise",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/juedischer-salat.jpg",
+      image:
+        "/images/cateringbilder/Klassische Rotebete Salat mit Pflaumen und Walnüssen, Mayonnaise.jpeg",
     },
     {
       id: "garten_salat",
@@ -135,7 +141,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Spinat, Tomaten, Rucola",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/shemesh-salat.jpg",
+      image:
+        "/images/cateringbilder/Garten Salat ( Spinat, Tomaten und Rucola).jpeg",
     },
     {
       id: "gemueseauflauf",
@@ -143,7 +150,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Gemüse nach Wahl",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/auberginen.jpg",
+      image:
+        "/images/cateringbilder/Auberginen ganz mit frischen Tomaten und Kräutern.jpeg",
     },
     {
       id: "nudelauflauf",
@@ -151,7 +159,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Cremig überbacken",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/vorspeisen-teller.jpg",
+      image: "/images/cateringbilder/Nudeln nach Italien Art.jpeg",
     },
   ],
   fingerfoods: [
@@ -161,7 +169,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Warme Vorspeise",
       category: "Warme Vorspeisen",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/blinis-fleisch.jpg",
+      image: "/images/cateringbilder/Neu/Blini mit Karrtoffeln.jpg",
     },
     {
       id: "blini_haehnchen",
@@ -237,7 +245,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Exotisch und aromatisch",
       category: "Fischgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/lachsfilet.jpg",
+      image: "/images/cateringbilder/Fischplatte.jpeg",
     },
     {
       id: "dorade_paprika_wein",
@@ -245,7 +253,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Mediterran gewürzt",
       category: "Fischgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/zanderfilet.jpg",
+      image: "/images/cateringbilder/Fischplatte.jpeg",
     },
     {
       id: "dorade_filet",
@@ -253,7 +261,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Zart gebraten",
       category: "Fischgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/zanderfilet.jpg",
+      image: "/images/cateringbilder/Gefühltefisch auf Anfrage.jpeg",
     },
     {
       id: "zander_tomaten",
@@ -261,7 +269,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Nach israelischer Art",
       category: "Fischgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/zanderfilet.jpg",
+      image: "/images/cateringbilder/Gefühltefisch auf Anfrage.jpeg",
     },
     {
       id: "haehnchenschenkel_tomaten",
@@ -269,7 +277,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Saftig und würzig",
       category: "Geflügelgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/huhn-tabaka.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "pargiot",
@@ -277,7 +285,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Israelische Hähnchenspezialität",
       category: "Geflügelgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/pargiot.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "geschnitzeltes_haehnchen_pute",
@@ -285,7 +293,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "In Kokos-Zitronen-Vinaigrette",
       category: "Geflügelgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/kievskaja-kotleta.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "puten_schnitzel",
@@ -293,7 +301,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Knusprig paniert",
       category: "Geflügelgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/kievskaja-kotleta.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "haehnchen_fluegel",
@@ -301,7 +309,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Würzig mariniert",
       category: "Geflügelgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/haehnchenspiess.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "rindergulasch",
@@ -309,7 +317,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Traditionell geschmort",
       category: "Rindfleischgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/fleischteller.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "boeuf_stroganoff",
@@ -317,7 +325,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Klassisch russisch",
       category: "Rindfleischgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/fleischteller.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "rinderbraten",
@@ -325,7 +333,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Saftig und aromatisch",
       category: "Rindfleischgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/fleischteller.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "rinderballchen_frikadellen",
@@ -333,7 +341,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Herzhaft und lecker",
       category: "Rindfleischgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/fleischteller.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
     {
       id: "plov_usbekisch",
@@ -349,7 +357,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Italienische Fleischsauce",
       category: "Rindfleischgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/fleischteller.jpg",
+      image: "/images/cateringbilder/Fleischplatte.jpeg",
     },
   ],
   beilagen: [
@@ -367,7 +375,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Knusprig aus dem Ofen",
       category: "Beilagen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/pargiot.jpg",
+      image:
+        "/images/cateringbilder/Kartoffeln Salat nach Israelischer Art.jpeg",
     },
     {
       id: "gelber_reis",
@@ -383,7 +392,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Al dente gekocht",
       category: "Beilagen",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/dishes/vorspeisen-teller.jpg",
+      image: "/images/cateringbilder/Nudeln nach Italien Art.jpeg",
     },
     {
       id: "drillinge",
@@ -391,7 +400,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Kleine Kartoffeln",
       category: "Beilagen",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/hering-kartoffeln.jpg",
+      image:
+        "/images/cateringbilder/Kartoffeln Salat nach Israelischer Art.jpeg",
     },
     {
       id: "gemuese_saisonal",
@@ -399,7 +409,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Saisonales Gemüse",
       category: "Beilagen",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/auberginen.jpg",
+      image:
+        "/images/cateringbilder/Auberginen ganz mit frischen Tomaten und Kräutern.jpeg",
     },
   ],
   dips_saucen: [],
@@ -410,7 +421,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Frische Früchte der Saison",
       category: "Dessert",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/birne-eis.jpg",
+      image: "/images/cateringbilder/Obstplatte.jpeg",
     },
     {
       id: "gebaeck",

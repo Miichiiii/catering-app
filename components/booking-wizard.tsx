@@ -470,7 +470,7 @@ GESAMTPREIS BRUTTO: ${total.toFixed(2).replace(".", ",")}€
             ← Zurück zur Startseite
           </Button>
           <h1 className="text-2xl font-bold text-primary">
-            Shemesh Restaurant
+            SLAVA BARAEV CATERING
           </h1>
           <div className="w-20"></div>
         </div>

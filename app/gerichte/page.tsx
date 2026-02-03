@@ -28,21 +28,6 @@ export default function GerichtePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-2xl font-bold text-primary hover:opacity-80 transition"
-          >
-            Shemesh Restaurant
-          </Link>
-          <Link href="/">
-            <Button variant="outline">Zurück zur Startseite</Button>
-          </Link>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="py-16 px-4 md:px-6 lg:px-8 bg-secondary">
         <div className="max-w-7xl mx-auto text-center">

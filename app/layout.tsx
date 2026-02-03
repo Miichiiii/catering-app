@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
     "Catering Service",
     "All Inclusive Menü",
   ],
-  authors: [{ name: "Shemesh Restaurant" }],
-  creator: "Shemesh Restaurant",
-  publisher: "Shemesh Restaurant",
+  authors: [{ name: "SLAVA BARAEV CATERING" }],
+  creator: "SLAVA BARAEV CATERING",
+  publisher: "SLAVA BARAEV CATERING",
   metadataBase: new URL("https://shemesh.medvidov.com"),
   alternates: {
     canonical: "/",
@@ -92,6 +93,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
         </ThemeProvider>
         <Analytics />

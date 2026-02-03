@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h4 className="font-bold mb-4">Shemesh Restaurant & Bar</h4>
+            <h4 className="font-bold mb-4">SLAVA BARAEV CATERING</h4>
             <p className="text-sm">
               Authentische kulinarische Vielfalt. Tradition trifft auf Handwerk
               – für dein perfektes Event.
@@ -20,22 +20,16 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-bold mb-4">RECHTLICHES</h4>
+            <h4 className="font-bold mb-4"></h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:opacity-75 transition">
-                  Impressum
-                </a>
+                <a href="#" className="hover:opacity-75 transition"></a>
               </li>
               <li>
-                <a href="#" className="hover:opacity-75 transition">
-                  Datenschutz
-                </a>
+                <a href="#" className="hover:opacity-75 transition"></a>
               </li>
               <li>
-                <a href="#" className="hover:opacity-75 transition">
-                  AGB
-                </a>
+                <a href="#" className="hover:opacity-75 transition"></a>
               </li>
             </ul>
           </div>
@@ -45,7 +39,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
               <h4 className="font-bold mb-4">DU HAST FRAGEN?</h4>
-              <p className="text-sm font-bold mb-3">Shemesh Restaurant & Bar</p>
+              <p className="text-sm font-bold mb-3">SLAVA BARAEV CATERING</p>
               <p className="text-sm mb-1">Grafenberger Allee 277</p>
               <p className="text-sm mb-3">40237 Düsseldorf</p>
               <p className="text-sm mb-2">
@@ -89,7 +83,7 @@ export default function Footer() {
 
         <div className="border-t border-background/20 pt-8 text-center text-sm">
           <p>
-            © 2025, Shemesh Restaurant & Bar |{" "}
+            © 2025, SLAVA BARAEV CATERING |{" "}
             <a href="#" className="hover:opacity-75">
               Datenschutzerklärung
             </a>{" "}

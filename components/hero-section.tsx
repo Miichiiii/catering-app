@@ -21,7 +21,7 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
       {/* Background Image with Overlay - Making it much lighter */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/dishes/grillplatte.jpg"
+          src="/images/cateringbilder/Hauptseitebild (2).jpeg"
           alt="Catering Background"
           fill
           className="object-cover opacity-5"
@@ -68,56 +68,7 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
               Event – jetzt auch in Düsseldorf und ganz Deutschland.
             </p>
 
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 text-center">
-              <p className="text-base text-foreground mb-2">
-                <span className="font-semibold">
-                  Unsere Speisen stehen unter Kaschrutaufsicht der ORD
-                </span>
-                <br />
-                durch
-              </p>
-              <p className="text-base text-foreground">
-                Oberrabbiner David Geballe und Oberrabbiner Shimon Lewin
-              </p>
-              <p className="text-sm text-muted-foreground mt-2 italic">
-                Auf Wunsch erfolgt die Aufsicht auch durch Chabad Düsseldorf.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <p className="text-2xl font-semibold text-foreground mb-2">
-                Tradition trifft Geschmack.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Koscheres Catering mit Seele – hochwertig, authentisch und mit
-                Liebe zum Detail.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <p className="text-lg text-muted-foreground mb-3">
-                Ob{" "}
-                <span className="font-semibold text-foreground">
-                  Hochzeiten
-                </span>
-                ,{" "}
-                <span className="font-semibold text-foreground">
-                  Firmenfeiern
-                </span>
-                ,{" "}
-                <span className="font-semibold text-foreground">
-                  Geburtstage
-                </span>
-                ,{" "}
-                <span className="font-semibold text-foreground">
-                  Bar- und Bat-Mizwa
-                </span>{" "}
-                oder viele weitere Anlässe –
-              </p>
-              <p className="text-xl font-semibold text-primary">
-                wir machen Ihr Event zu einem besonderen kulinarischen Erlebnis.
-              </p>
-            </div>
+            
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -145,25 +96,25 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              id: "variety",
-              title: "Authentische Vielfalt",
+              id: "kashrut",
+              title: "Kaschrutaufsicht der ORD",
               description:
-                "Traditionelle Gerichte aus Israel, Russland, Georgien und der Levante",
-              icon: "🍽️",
+                "Durch Oberrabbiner David Geballe und Oberrabbiner Shimon Lewin. Auf Wunsch auch durch Chabad Düsseldorf.",
+              icon: "✡️",
             },
             {
-              id: "quality",
-              title: "Premium Qualität",
+              id: "tradition",
+              title: "Tradition trifft Geschmack",
               description:
-                "Frische Zutaten, handwerkliche Zubereitung, höchste Qualitätsstandards",
-              icon: "⭐",
+                "Koscheres Catering mit Seele – hochwertig, authentisch und mit Liebe zum Detail.",
+              icon: "❤️",
             },
             {
-              id: "service",
-              title: "Professioneller Service",
+              id: "events",
+              title: "Für jeden Anlass",
               description:
-                "Pünktliche Lieferung, flexible Menüs, individuelle Beratung",
-              icon: "👨‍🍳",
+                "Ob Hochzeiten, Firmenfeiern, Geburtstage, Bar- und Bat-Mizwa oder viele weitere Anlässe – wir machen Ihr Event zu einem besonderen kulinarischen Erlebnis.",
+              icon: "🎉",
             },
           ].map((feature, index) => (
             <motion.div

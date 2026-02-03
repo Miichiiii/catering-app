@@ -115,14 +115,14 @@ export default function AboutPage() {
               className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl"
             >
               <img
-                src="/images/dishes/grillplatte.jpg"
+                src="/images/cateringbilder/Hauptseitebild (2).jpeg"
                 alt="Slava Baraev Catering"
                 className="object-cover w-full h-full"
               />
             </motion.div>
           </motion.div>
 
-          {/* Shemesh Restaurant Connection */}
+          {/* Restaurant Connection */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
