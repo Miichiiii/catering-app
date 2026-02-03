@@ -15,6 +15,12 @@ export default function Header() {
             Startseite
           </a>
           <Link
+            href="/ueber-uns"
+            className="text-foreground hover:text-primary transition"
+          >
+            Über uns
+          </Link>
+          <Link
             href="/menu"
             className="text-foreground hover:text-primary transition"
           >
