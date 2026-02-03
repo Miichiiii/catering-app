@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
@@ -115,11 +114,10 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl"
             >
-              <Image
+              <img
                 src="/images/dishes/grillplatte.jpg"
                 alt="Slava Baraev Catering"
-                fill
-                className="object-cover"
+                className="object-cover w-full h-full"
               />
             </motion.div>
           </motion.div>
