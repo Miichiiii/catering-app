@@ -21,7 +21,7 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
       {/* Background Image with Overlay - Making it much lighter */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/cateringbilder/Hauptseitebild (2).jpeg"
+          src="/images/cateringbilder/galerie.JPG"
           alt="Catering Background"
           fill
           className="object-cover opacity-5"
@@ -67,8 +67,6 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
               und bringt authentische Kulinarik auf höchstem Niveau zu Ihrem
               Event – jetzt auch in Düsseldorf und ganz Deutschland.
             </p>
-
-            
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
