@@ -36,7 +36,7 @@ export default function CartSidebar({
     hauptgaenge: "Hauptgänge",
     fingerfoods: "Fingerfoods",
     beilagen: "Beilagen",
-    dips_saucen: "Suppen, Dipps & Saucen",
+    suppen: "Suppen",
     desserts: "Desserts",
   };
 

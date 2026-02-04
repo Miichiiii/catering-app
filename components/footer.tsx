@@ -84,15 +84,15 @@ export default function Footer() {
         <div className="border-t border-background/20 pt-8 text-center text-sm">
           <p>
             © 2025, SLAVA BARAEV CATERING |{" "}
-            <a href="#" className="hover:opacity-75">
+            <a href="/datenschutz" className="hover:opacity-75">
               Datenschutzerklärung
             </a>{" "}
             |{" "}
-            <a href="#" className="hover:opacity-75">
+            <a href="/impressum" className="hover:opacity-75">
               Impressum
             </a>{" "}
             |{" "}
-            <a href="#" className="hover:opacity-75">
+            <a href="/agb" className="hover:opacity-75">
               AGB
             </a>
           </p>

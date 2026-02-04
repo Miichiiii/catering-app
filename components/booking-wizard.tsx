@@ -187,6 +187,42 @@ export default function BookingWizard({
     }
   };
 
+  // Validierung für den aktuellen Schritt
+  const isCurrentStepValid = () => {
+    const stepName = steps[currentStep];
+    
+    switch (stepName) {
+      case "Event-Art":
+        return eventType !== null;
+      case "Postleitzahl":
+        return location.trim().length > 0;
+      case "Gästeanzahl":
+        return guestCount !== null && guestCount >= 20;
+      case "Wunschtermin":
+        return eventDate.trim().length > 0;
+      case "Lieferinformationen":
+        const deliveryTimeValid = eventType === "delivery" ? deliveryTime.trim().length > 0 : true;
+        return streetName.trim().length > 0 && 
+               streetNumber.trim().length > 0 && 
+               eventStart.trim().length > 0 && 
+               deliveryTimeValid;
+      case "Checkout":
+        return firstName.trim().length > 0 && 
+               lastName.trim().length > 0 && 
+               billingStreet.trim().length > 0 && 
+               billingHouseNumber.trim().length > 0 && 
+               billingZipCode.trim().length > 0 && 
+               billingCity.trim().length > 0 && 
+               email.trim().length > 0 && 
+               phone.trim().length > 0 &&
+               agbAccepted &&
+               privacyAccepted;
+      default:
+        // Für Food-Selection Steps und optionale Steps
+        return true;
+    }
+  };
+
   const handleSubmit = () => {
     if (!agbAccepted || !privacyAccepted) {
       alert("Bitte akzeptieren Sie die AGB und Datenschutzerklärung.");
@@ -634,7 +670,8 @@ GESAMTPREIS BRUTTO: ${total.toFixed(2).replace(".", ",")}€
               ) : (
                 <Button
                   onClick={handleNext}
-                  className="px-8 bg-primary hover:opacity-90 text-primary-foreground"
+                  disabled={!isCurrentStepValid()}
+                  className="px-8 bg-primary hover:opacity-90 text-primary-foreground disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Weiter →
                 </Button>
