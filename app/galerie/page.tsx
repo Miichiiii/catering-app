@@ -144,6 +144,26 @@ export default function GaleriePage() {
       alt: "Rote Bete mit Salzgurken",
       title: "Rote Bete mit Salzgurken",
     },
+    {
+      src: "/images/cateringbilder/Auberginen Satte_jpg.jpg",
+      alt: "Auberginen Satte",
+      title: "Auberginen Satte",
+    },
+    {
+      src: "/images/cateringbilder/Heringmantel_2_.jpg",
+      alt: "Hering unter Rote Bete Mantel",
+      title: "Hering unter Rote Bete Mantel",
+    },
+    {
+      src: "/images/cateringbilder/lachsfilet im cocos limette sauce.jpg",
+      alt: "Lachsfilet in Kokos-Limetten-Sauce",
+      title: "Lachsfilet in Kokos-Limetten-Sauce",
+    },
+    {
+      src: "/images/cateringbilder/plov.jpg",
+      alt: "Plov nach Usbekischer Art",
+      title: "Plov nach Usbekischer Art",
+    },
   ];
 
   return (

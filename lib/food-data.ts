@@ -123,8 +123,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Würzige Paprika-Tomaten-Paste",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image:
-        "/images/cateringbilder/Auberginen ganz mit frischen Tomaten und Kräutern.jpeg",
+      image: "/images/cateringbilder/Auberginen Satte_jpg.jpg",
     },
     {
       id: "rote_bete_pflaumen",
@@ -245,7 +244,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Exotisch und aromatisch",
       category: "Fischgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/cateringbilder/Fischplatte.jpeg",
+      image: "/images/cateringbilder/lachsfilet im cocos limette sauce.jpg",
     },
     {
       id: "dorade_paprika_wein",
@@ -349,7 +348,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Traditionelles Reisgericht",
       category: "Rindfleischgerichte",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/grillplatte.jpg",
+      image: "/images/cateringbilder/plov.jpg",
     },
     {
       id: "bolognese",
