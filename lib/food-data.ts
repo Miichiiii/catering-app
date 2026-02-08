@@ -176,7 +176,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Warme Vorspeise",
       category: "Warme Vorspeisen",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/blinis-fleisch.jpg",
+      image: "/images/cateringbilder/Neu/Blini mit Karrtoffeln.jpg",
     },
     {
       id: "blini_pilze",
@@ -184,7 +184,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Warme Vorspeise",
       category: "Warme Vorspeisen",
       availableIn: ["gold", "premium"],
-      image: "/images/dishes/blinis-fleisch.jpg",
+      image: "/images/cateringbilder/Neu/Blini mit Karrtoffeln.jpg",
     },
     {
       id: "burekas_kartoffeln",
