@@ -45,12 +45,12 @@ export default function GaleriePage() {
       title: "Kartoffeln Salat nach Israelischer Art",
     },
     {
-      src: "/images/cateringbilder/Klassische Rotebete Salat mit Pflaumen und Walnüssen, Mayonnaise.jpeg",
+      src: "/images/cateringbilder/neu2/Rotebete klassischer Salat.jpeg",
       alt: "Rote Bete Salat",
       title: "Klassische Rote Bete Salat",
     },
     {
-      src: "/images/cateringbilder/Mohren Salat.jpeg",
+      src: "/images/cateringbilder/neu2/Mohren Salat.jpeg",
       alt: "Möhren Salat",
       title: "Möhren Salat",
     },
@@ -65,7 +65,7 @@ export default function GaleriePage() {
       title: "Obstplatte",
     },
     {
-      src: "/images/cateringbilder/Süßkartoffeln mit Rotebete und Kichererbsen.jpeg",
+      src: "/images/cateringbilder/neu2/Süßkartoffeln Salat mit Tahini.jpeg",
       alt: "Süßkartoffeln",
       title: "Süßkartoffeln mit Rote Bete und Kichererbsen",
     },
@@ -80,7 +80,7 @@ export default function GaleriePage() {
       title: "Eingelegte Gemüse",
     },
     {
-      src: "/images/cateringbilder/Auberginen ganz mit frischen Tomaten und Kräutern.jpeg",
+      src: "/images/cateringbilder/neu2/Gemüse Auflauf.jpeg",
       alt: "Auberginen",
       title: "Auberginen mit frischen Tomaten und Kräutern",
     },
@@ -90,12 +90,12 @@ export default function GaleriePage() {
       title: "Garten Salat (Spinat, Tomaten und Rucola)",
     },
     {
-      src: "/images/cateringbilder/Gefühltefisch auf Anfrage.jpeg",
+      src: "/images/cateringbilder/neu2/Gefülltte Fisch auf Anfrage.jpeg",
       alt: "Gefüllter Fisch",
       title: "Gefüllter Fisch auf Anfrage",
     },
     {
-      src: "/images/cateringbilder/Sushi auf Anfrage.jpeg",
+      src: "/images/cateringbilder/neu2/Sushi auf Anfrage.jpeg",
       alt: "Sushi",
       title: "Sushi auf Anfrage",
     },
@@ -125,12 +125,12 @@ export default function GaleriePage() {
       title: "Funcheza Salat",
     },
     {
-      src: "/images/cateringbilder/Neu/galeri bilder.jpg",
+      src: "/images/cateringbilder/neu2/Galerie1.jpeg",
       alt: "Galerie Übersicht",
       title: "Galerie Übersicht",
     },
     {
-      src: "/images/cateringbilder/Neu/galerie.JPG",
+      src: "/images/cateringbilder/neu2/Galerie2.jpeg",
       alt: "Galerie",
       title: "Galerie",
     },
@@ -145,7 +145,7 @@ export default function GaleriePage() {
       title: "Rote Bete mit Salzgurken",
     },
     {
-      src: "/images/cateringbilder/Auberginen Satte_jpg.jpg",
+      src: "/images/cateringbilder/neu2/Matbucha.jpeg",
       alt: "Auberginen Satte",
       title: "Auberginen Satte",
     },
@@ -163,6 +163,71 @@ export default function GaleriePage() {
       src: "/images/cateringbilder/plov.jpg",
       alt: "Plov nach Usbekischer Art",
       title: "Plov nach Usbekischer Art",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Dorade im Paprika weinsauce.jpeg",
+      alt: "Dorade im Paprika Weinsauce",
+      title: "Dorade im Paprika Weinsauce",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Gebackene Kartoffeln.jpeg",
+      alt: "Gebackene Kartoffeln",
+      title: "Gebackene Kartoffeln",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Gefülltte Auberginen mit Möhren.jpeg",
+      alt: "Gefüllte Auberginen mit Möhren",
+      title: "Gefüllte Auberginen mit Möhren",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Gelbereis.jpeg",
+      alt: "Gelber Reis",
+      title: "Gelber Reis",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Gemüse reis.jpeg",
+      alt: "Gemüsereis",
+      title: "Gemüsereis",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Hahnchengeschnitzeltes in kokos zitronen vinegrete.jpeg",
+      alt: "Hähnchen Geschnetzeltes",
+      title: "Hähnchen Geschnetzeltes in Kokos-Zitronen-Vinaigrette",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Knusprige Falafel.jpeg",
+      alt: "Knusprige Falafel",
+      title: "Knusprige Falafel",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Nudel als Beilage.jpeg",
+      alt: "Nudeln als Beilage",
+      title: "Nudeln als Beilage",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Nudelauflauf.jpeg",
+      alt: "Nudelauflauf",
+      title: "Nudelauflauf",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Pargiot.jpeg",
+      alt: "Pargiot",
+      title: "Pargiot",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Zanderfilet in Tomaten Sauce.jpeg",
+      alt: "Zanderfilet in Tomaten Sauce",
+      title: "Zanderfilet in Tomaten Sauce",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Gebackene hahnchenkeule im Tomaten Sauce.jpeg",
+      alt: "Gebackene Hähnchenschenkel in Tomaten Sauce",
+      title: "Gebackene Hähnchenschenkel in Tomaten Sauce",
+    },
+    {
+      src: "/images/cateringbilder/neu2/Cous cous mit Paprika Salat.jpeg",
+      alt: "Couscous mit Paprika Salat",
+      title: "Couscous mit Paprika Salat",
     },
   ];
 
