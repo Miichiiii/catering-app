@@ -23,8 +23,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Olivenöl, frischem Koriander",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image:
-        "/images/cateringbilder/neu2/Rotebete klassischer Salat.jpeg",
+      image: "/images/cateringbilder/neu2/Rotebete klassischer Salat.jpeg",
     },
     {
       id: "suesskartoffeln_rote_bete",
@@ -32,8 +31,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Kichererbsen",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image:
-        "/images/cateringbilder/neu2/Süßkartoffeln Salat mit Tahini.jpeg",
+      image: "/images/cateringbilder/neu2/Süßkartoffeln Salat mit Tahini.jpeg",
     },
     {
       id: "moehren_salat",
@@ -81,8 +79,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Dattelsirup",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image:
-        "/images/cateringbilder/neu2/Süßkartoffeln Salat mit Tahini.jpeg",
+      image: "/images/cateringbilder/neu2/Süßkartoffeln Salat mit Tahini.jpeg",
     },
     {
       id: "kartoffeln_salat_israeli",
@@ -131,8 +128,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Pflaumen, Walnuss, Mayonnaise",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image:
-        "/images/cateringbilder/neu2/Rotebete klassischer Salat.jpeg",
+      image: "/images/cateringbilder/neu2/Rotebete klassischer Salat.jpeg",
     },
     {
       id: "garten_salat",
@@ -149,8 +145,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Gemüse nach Wahl",
       category: "Vorspeisen",
       availableIn: ["classic", "gold", "premium"],
-      image:
-        "/images/cateringbilder/neu2/Gemüse Auflauf.jpeg",
+      image: "/images/cateringbilder/neu2/Gemüse Auflauf.jpeg",
     },
     {
       id: "nudelauflauf",
@@ -276,7 +271,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Saftig und würzig",
       category: "Geflügelgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/cateringbilder/neu2/Gebackene hahnchenkeule im Tomaten Sauce.jpeg",
+      image:
+        "/images/cateringbilder/neu2/Gebackene hahnchenkeule im Tomaten Sauce.jpeg",
     },
     {
       id: "pargiot",
@@ -292,7 +288,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "In Kokos-Zitronen-Vinaigrette",
       category: "Geflügelgerichte",
       availableIn: ["classic", "gold", "premium"],
-      image: "/images/cateringbilder/neu2/Hahnchengeschnitzeltes in kokos zitronen vinegrete.jpeg",
+      image:
+        "/images/cateringbilder/neu2/Hahnchengeschnitzeltes in kokos zitronen vinegrete.jpeg",
     },
     {
       id: "puten_schnitzel",
@@ -374,8 +371,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Knusprig aus dem Ofen",
       category: "Beilagen",
       availableIn: ["classic", "gold", "premium"],
-      image:
-        "/images/cateringbilder/neu2/Gebackene Kartoffeln.jpeg",
+      image: "/images/cateringbilder/neu2/Gebackene Kartoffeln.jpeg",
     },
     {
       id: "gelber_reis",
@@ -408,8 +404,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Saisonales Gemüse",
       category: "Beilagen",
       availableIn: ["gold", "premium"],
-      image:
-        "/images/cateringbilder/neu2/Gefülltte Auberginen mit Möhren.jpeg",
+      image: "/images/cateringbilder/neu2/Gefülltte Auberginen mit Möhren.jpeg",
     },
   ],
   dips_saucen: [],
