@@ -63,26 +63,21 @@ export default function DatenschutzPage() {
             <p className="mb-2">
               Telefon:{" "}
               <a
-                href="tel:01751770787"
+                href="tel:+491751770787"
                 className="text-primary hover:underline"
               >
-                0175 177 0787
+                +491751770787
               </a>{" "}
               /{" "}
-              <a
-                href="tel:021123942900"
-                className="text-primary hover:underline"
-              >
-                0211 239 42900
-              </a>
+              
             </p>
             <p className="mb-4">
               E-Mail:{" "}
               <a
-                href="mailto:info@shemesh-restaurant.de"
+                href="mailto:koscher-catering@gmx.de"
                 className="text-primary hover:underline"
               >
-                info@shemesh-restaurant.de
+                koscher-catering@gmx.de
               </a>
             </p>
           </section>

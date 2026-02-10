@@ -319,7 +319,7 @@ export default function AGBPage() {
 
           <div className="mt-8 pt-8 border-t">
             <p className="text-sm text-muted-foreground">
-              <strong>Shemesh Restaurant & Bar</strong>
+              <strong>Slava Baraev Catering</strong>
               <br />
               Istam Baraeva
               <br />

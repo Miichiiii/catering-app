@@ -13,7 +13,7 @@ export default function ImpressumPage() {
             </h2>
             <p className="mb-2">Istam Baraeva</p>
             <p className="mb-2">Lichtenbroicher Weg 78</p>
-            <p className="mb-2">40237 Düsseldorf</p>
+            <p className="mb-2">40472 Düsseldorf</p>
             <p className="mb-2">
               Tel:{" "}
               <a
@@ -35,10 +35,10 @@ export default function ImpressumPage() {
             <p>
               E-Mail:{" "}
               <a
-                href="mailto:info@koschercatering.de"
+                href="mailto:koscher-catering@gmx.de"
                 className="text-primary hover:underline"
               >
-                info@koschercatering.de
+                koscher-catering@gmx.de
               </a>
             </p>
           </section>
