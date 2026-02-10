@@ -40,27 +40,22 @@ export default function Footer() {
             <div>
               <h4 className="font-bold mb-4">DU HAST FRAGEN?</h4>
               <p className="text-sm font-bold mb-3">SLAVA BARAEV CATERING</p>
-              <p className="text-sm mb-1">Grafenberger Allee 277</p>
-              <p className="text-sm mb-3">40237 Düsseldorf</p>
+              <p className="text-sm mb-1">Lichtenbroicher Weg 78</p>
+              <p className="text-sm mb-3">40472 Düsseldorf</p>
               <p className="text-sm mb-2">
                 Telefon:{" "}
-                <a href="tel:017517770787" className="hover:opacity-75">
-                  0175 177 70787
+                <a href="tel:+4917517770787" className="hover:opacity-75">
+                  +49 175 177 70787
                 </a>
               </p>
-              <p className="text-sm mb-2">
-                Telefon:{" "}
-                <a href="tel:021123942900" className="hover:opacity-75">
-                  0211 239 42900
-                </a>
-              </p>
+              
               <p className="text-sm">
                 Kontakt:{" "}
                 <a
-                  href="mailto:info@shemesh-restaurant.de"
+                  href="mailto:koscher-catering@gmx.de"
                   className="hover:opacity-75"
                 >
-                  info@shemesh-restaurant.de
+                  koscher-catering@gmx.de
                 </a>
               </p>
             </div>
