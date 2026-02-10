@@ -56,10 +56,10 @@ export default function DatenschutzPage() {
               Verantwortlicher Anbieter dieses Internetauftritts im
               datenschutzrechtlichen Sinne ist:
             </p>
-            <p className="mb-2 font-semibold">Shemesh Restaurant</p>
-            <p className="mb-2">Jakov Baraev</p>
-            <p className="mb-2">Grafenberger Allee 277</p>
-            <p className="mb-4">40237 Düsseldorf</p>
+            <p className="mb-2 font-semibold">Slava Baraev Catering</p>
+            <p className="mb-2">Slava Baraev</p>
+            <p className="mb-2">Lichtenbroicher Weg 78</p>
+            <p className="mb-4">40472 Düsseldorf</p>
             <p className="mb-2">
               Telefon:{" "}
               <a

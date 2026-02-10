@@ -13,8 +13,8 @@ export default function AGBPage() {
             <h2 className="text-2xl font-semibold mb-4">§ 1 Geltungsbereich</h2>
             <p className="mb-4">
               Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle
-              Verträge zwischen Shemesh Restaurant & Bar, Istam Baraeva,
-              Grafenberger Allee 277, 40237 Düsseldorf (nachfolgend "Anbieter"
+              Verträge zwischen, Slava Baraev,
+              40472 düsseldorf (nachfolgend "Anbieter"
               genannt) und dem Auftraggeber (nachfolgend "Kunde" genannt) über
               die Erbringung von Catering-Dienstleistungen.
             </p>
@@ -323,9 +323,9 @@ export default function AGBPage() {
               <br />
               Istam Baraeva
               <br />
-              Grafenberger Allee 277
+              Lichtenbroicher Weg 78
               <br />
-              40237 Düsseldorf
+              40472 Düsseldorf
               <br />
               <br />
               Stand: Februar 2026

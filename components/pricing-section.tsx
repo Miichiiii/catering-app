@@ -169,7 +169,7 @@ export default function PricingSection({
               asChild
             >
               <a
-                href={`https://api.whatsapp.com/send?phone=4915678443874&text=${encodeURIComponent("Hallo, ich interessiere mich für eine individuelle Beratung für mein Event.")}`}
+                href={`https://api.whatsapp.com/send?phone=491751770787&text=${encodeURIComponent("Hallo, ich interessiere mich für eine individuelle Beratung für mein Event.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

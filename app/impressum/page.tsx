@@ -9,10 +9,10 @@ export default function ImpressumPage() {
         <div className="prose prose-lg max-w-none space-y-8">
           <section>
             <h2 className="text-2xl font-semibold mb-4">
-              Shemesh Restaurant & Bar
+              Slava Baraev Catering
             </h2>
             <p className="mb-2">Istam Baraeva</p>
-            <p className="mb-2">Grafenberger Allee 277</p>
+            <p className="mb-2">Lichtenbroicher Weg 78</p>
             <p className="mb-2">40237 Düsseldorf</p>
             <p className="mb-2">
               Tel:{" "}
@@ -20,7 +20,7 @@ export default function ImpressumPage() {
                 href="tel:01751770787"
                 className="text-primary hover:underline"
               >
-                0175 177 0787
+                +491751770787
               </a>
             </p>
             <p className="mb-2">
@@ -29,16 +29,16 @@ export default function ImpressumPage() {
                 href="tel:021123942900"
                 className="text-primary hover:underline"
               >
-                0211 239 42900
+                +491751770787
               </a>
             </p>
             <p>
               E-Mail:{" "}
               <a
-                href="mailto:info@shemesh-restaurant.de"
+                href="mailto:info@koschercatering.de"
                 className="text-primary hover:underline"
               >
-                info@shemesh-restaurant.de
+                info@koschercatering.de
               </a>
             </p>
           </section>

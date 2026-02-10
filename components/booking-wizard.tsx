@@ -453,7 +453,7 @@ GESAMTPREIS BRUTTO: ${total.toFixed(2).replace(".", ",")}€
 
     // WhatsApp-Nachricht erstellen
     const whatsappMessage = encodeURIComponent(emailBody);
-    const whatsappLink = `https://api.whatsapp.com/send?phone=4915678443874&text=${whatsappMessage}`;
+    const whatsappLink = `https://api.whatsapp.com/send?phone=491751770787&text=${whatsappMessage}`;
 
     // Öffne WhatsApp
     window.open(whatsappLink, "_blank");
