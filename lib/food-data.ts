@@ -396,7 +396,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       category: "Beilagen",
       availableIn: ["gold", "premium"],
       image:
-        "/images/cateringbilder/Kartoffeln Salat nach Israelischer Art.jpeg",
+        "/images/cateringbilder/neu3/Beilage Drillinge.jpeg",
     },
     {
       id: "gemuese_saisonal",
@@ -404,7 +404,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       description: "Saisonales Gemüse",
       category: "Beilagen",
       availableIn: ["gold", "premium"],
-      image: "/images/cateringbilder/neu2/Gefülltte Auberginen mit Möhren.jpeg",
+      image: "/images/cateringbilder/neu3/Beilage Gemüse.jpeg",
     },
   ],
   dips_saucen: [],
