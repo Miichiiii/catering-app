@@ -57,7 +57,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       name: "Bohnensalat",
       description: "Bohnensalat",
       category: "Salate",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/bohnensalat.jpeg",
     },
 
@@ -66,7 +66,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       name: "Jüdischer Salat",
       description: "Jüdischer Salat",
       category: "Salate",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Judische Salat.jpeg",
     },
 
@@ -75,7 +75,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       name: "Hering unter Rotebete Mantel",
       description: "Hering unter Rotebete Mantel",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Hering unter Rotebete Mantel.jpeg",
     },
 
@@ -84,25 +84,25 @@ export const foodItems: Record<string, FoodItem[]> = {
       name: "Gefüllte Auberginen",
       description: "Gefüllte Auberginen",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Gefülltte Auberginen.jpeg",
     },
 
- {
+    {
       id: "auberginen_saute",
       name: "Auberginen Saute",
       description: "Auberginen Saute",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Auberginen Saute.jpeg",
     },
 
-{
+    {
       id: "fischplatte",
       name: "Fischplatte",
       description: "Fischplatte",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Fischplatte.jpeg",
     },
 
@@ -111,7 +111,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       name: "Fleischplatte",
       description: "Fleischplatte",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Fleischplatte.jpeg",
     },
 
@@ -120,17 +120,17 @@ export const foodItems: Record<string, FoodItem[]> = {
       name: "Gebackene Auberginen",
       description: "Gebackene Auberginen mit Kichererbsen, Paprika",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
-      image: "/images/cateringbilder/neu3/Gebackene Auberginen mit Kichererbsen,  Paprika.jpeg",
+      availableIn: ["gold", "premium"],
+      image:
+        "/images/cateringbilder/neu3/Gebackene Auberginen mit Kichererbsen,  Paprika.jpeg",
     },
-
 
     {
       id: "eingelegte_gemuese",
       name: "Eingelegte Gemüse",
       description: "Eingelegte Gemüse",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Eingelegte Gemüse.jpeg",
     },
 
@@ -139,7 +139,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       name: "Ganze Auberginen",
       description: "Ganze Auberginen",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Ganze Auberginen.jpeg",
     },
 
@@ -181,7 +181,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       name: "Rote-Bete mit Vinaigrette",
       description: "Olivenöl, frischem Koriander",
       category: "Vorspeisen",
-      availableIn: ["classic", "gold", "premium"],
+      availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/Neu/Rotebete mit salzgurken.jpg",
     },
 
@@ -528,33 +528,33 @@ export function getPackageItems(
 ): Record<string, number> {
   const limits = {
     classic: {
-      // Menü 1: 4 Salate + 2 Vorspeisen, 2 Hauptspeisen (1 Fisch + 1 Geflügel), 4 Beilagen
+      // Klassik Menü: 4 Salate + 2 Vorspeisen, 2 Hauptspeisen (1 Fisch + 1 Hähnchen), 2 Beilagen
       vorspeisen: 6,
       hauptgaenge: 2,
       fingerfoods: 0,
-      beilagen: 4,
+      beilagen: 2,
       dips_saucen: 0,
       desserts: 0,
       suppen: 0,
     },
     gold: {
-      // Menü 2: 5 Salate + 2 Vorspeisen, 1 warme Vorspeise, 2 Hauptspeisen, 5 Beilagen, 1 Dessert - ab 25 Personen
+      // Shemesh Gold: 5 Salate + 2 Vorspeisen, 1 warme Vorspeise, 2 Hauptspeisen (Fisch + Fleisch), 2 Beilagen, 1 Dessert (Obst)
       vorspeisen: 7,
       hauptgaenge: 2,
       fingerfoods: 1,
-      beilagen: 5,
+      beilagen: 2,
       dips_saucen: 0,
       desserts: 1,
       suppen: 0,
     },
     premium: {
-      // Menü 3: 6 Salate + 2 Vorspeisen, 1 warme Vorspeise, 1 Suppe, 3 Hauptspeisen, 3 Beilagen, 2 Desserts - ab 30 Personen
-      vorspeisen: 8,
+      // Premium Menü: 5 Salate + 2 Vorspeisen, 1 warme Vorspeise, 1 Suppe, 3 Hauptspeisen, 3 Beilagen, 1 Dessert (Obst + evtl. Gebäck)
+      vorspeisen: 7,
       hauptgaenge: 3,
       fingerfoods: 1,
       beilagen: 3,
       dips_saucen: 0,
-      desserts: 2,
+      desserts: 1,
       suppen: 1,
     },
   };
