@@ -37,9 +37,9 @@ export default function FoodSelectionStep({
 
   const categoryNameMap: Record<string, string> = {
     salate: "Salate",
-    vorspeisen: "Vorspeisen",
+    vorspeisen: "Kalte Vorspeisen",
+    fingerfoods: "Warme Vorspeisen",
     hauptgaenge: "Hauptgänge",
-    fingerfoods: "Fingerfoods",
     beilagen: "Beilagen",
     dips_saucen: "Suppen, Dipps & Saucen",
     desserts: "Desserts",

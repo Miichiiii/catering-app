@@ -82,33 +82,6 @@ export const foodItems: Record<string, FoodItem[]> = {
     },
 
     {
-      id: "gefuellte_auberginen",
-      name: "Gefüllte Auberginen",
-      description: "Gefüllte Auberginen",
-      category: "Salate",
-      availableIn: ["gold", "premium"],
-      image: "/images/cateringbilder/neu3/Gefülltte Auberginen.jpeg",
-    },
-
-    {
-      id: "auberginen_saute",
-      name: "Auberginen Saute",
-      description: "Auberginen Saute",
-      category: "Salate",
-      availableIn: ["gold", "premium"],
-      image: "/images/cateringbilder/neu3/Auberginen Saute.jpeg",
-    },
-
-    {
-      id: "fischplatte",
-      name: "Fischplatte",
-      description: "Fischplatte",
-      category: "Salate",
-      availableIn: ["gold", "premium"],
-      image: "/images/cateringbilder/neu3/Fischplatte.jpeg",
-    },
-
-    {
       id: "fleischplatte",
       name: "Fleischplatte",
       description: "Fleischplatte",
@@ -127,23 +100,7 @@ export const foodItems: Record<string, FoodItem[]> = {
         "/images/cateringbilder/neu3/Gebackene Auberginen mit Kichererbsen,  Paprika.jpeg",
     },
 
-    {
-      id: "eingelegte_gemuese",
-      name: "Eingelegte Gemüse",
-      description: "Eingelegte Gemüse",
-      category: "Salate",
-      availableIn: ["gold", "premium"],
-      image: "/images/cateringbilder/neu3/Eingelegte Gemüse.jpeg",
-    },
-
-    {
-      id: "ganze_auberginen",
-      name: "Ganze Auberginen",
-      description: "Ganze Auberginen",
-      category: "Salate",
-      availableIn: ["gold", "premium"],
-      image: "/images/cateringbilder/neu3/Ganze Auberginen.jpeg",
-    },
+    
 
     {
       id: "nudeln_italien",
@@ -246,7 +203,42 @@ export const foodItems: Record<string, FoodItem[]> = {
         "/images/cateringbilder/Garten Salat ( Spinat, Tomaten und Rucola).jpeg",
     },
   ],
-  vorspeisen: [
+  kalte_vorspeisen: [ //Kalte Vorspeisen
+    {
+      id: "eingelegte_gemuese",
+      name: "Eingelegte Gemüse",
+      description: "Eingelegte Gemüse",
+      category: "Vorspeisen",
+      availableIn: ["gold", "premium"],
+      image: "/images/cateringbilder/neu3/Eingelegte Gemüse.jpeg",
+    },
+
+    {
+      id: "ganze_auberginen",
+      name: "Ganze Auberginen",
+      description: "Ganze Auberginen",
+      category: "Vorspeisen",
+      availableIn: ["gold", "premium"],
+      image: "/images/cateringbilder/neu3/Ganze Auberginen.jpeg",
+    },
+    
+    {
+      id: "auberginen_saute",
+      name: "Auberginen Saute",
+      description: "Auberginen Saute",
+      category: "Vorspeisen",
+      availableIn: ["gold", "premium"],
+      image: "/images/cateringbilder/neu3/Auberginen Saute.jpeg",
+    },
+
+    {
+      id: "fischplatte",
+      name: "Fischplatte",
+      description: "Fischplatte",
+      category: "Vorspeisen",
+      availableIn: ["gold", "premium"],
+      image: "/images/cateringbilder/neu3/Fischplatte.jpeg",
+    },
     {
       id: "gemueseauflauf",
       name: "Gemüseauflauf",
@@ -264,7 +256,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       image: "/images/cateringbilder/neu2/Nudelauflauf.jpeg",
     },
   ],
-  fingerfoods: [
+  warme_vorspeisen: [ //Warme Vorspeisen
     {
       id: "blini_kartoffeln",
       name: "Blini mit Kartoffeln",
@@ -533,10 +525,10 @@ export function getPackageItems(
   const limits = {
     classic: {
       // Klassik Menü: 4 Salate + 1 Vorspeise, 1 Hauptspeise (Fisch ODER Hähnchen), 2 Beilagen
-      vorspeisen: 1,
+      kalte_vorspeisen: 1,
       salate: 4,
       hauptgaenge: 1,
-      fingerfoods: 0,
+      warme_vorspeisen: 0,
       beilagen: 2,
       dips_saucen: 0,
       desserts: 0,
@@ -545,7 +537,8 @@ export function getPackageItems(
     gold: {
       // Shemesh Gold: 5 Salate + 2 Vorspeisen, 1 warme Vorspeise, 2 Hauptspeisen (Fisch + Fleisch), 2 Beilagen, 1 Dessert (Obst)
       salate: 5, 
-      vorspeisen: 2,
+      kalte_vorspeisen: 1,
+      warme_vorspeisen: 1,
       hauptgaenge: 2,
       fingerfoods: 1,
       beilagen: 2,
@@ -555,7 +548,9 @@ export function getPackageItems(
     },
     premium: {
       // Premium Menü: 5 Salate + 2 Vorspeisen, 1 warme Vorspeise, 1 Suppe, 3 Hauptspeisen, 3 Beilagen, 1 Dessert (Obst + evtl. Gebäck)
-      vorspeisen: 7,
+      salate: 5,
+      kalte_vorspeisen: 2,
+      warme_vorspeisen: 1,
       hauptgaenge: 3,
       fingerfoods: 1,
       beilagen: 3,

@@ -41,9 +41,9 @@ export default function BookingWizard({
   const [selectedAllergies, setSelectedAllergies] = useState<string[]>([]);
   const [selectedItems, setSelectedItems] = useState<Record<string, string[]>>({
     salate: [],
-    vorspeisen: [],
+    kalte_vorspeisen: [],
+    warme_vorspeisen: [],
     hauptgaenge: [],
-    fingerfoods: [],
     beilagen: [],
     dips_saucen: [],
     desserts: [],
@@ -78,9 +78,9 @@ export default function BookingWizard({
     "Gästeanzahl",
     "Wunschtermin",
     "Salate",
-    "Vorspeisen",
+    "Kalte Vorspeisen",
+    "Warme Vorspeisen",
     "Hauptgänge",
-    "Fingerfoods",
     "Beilagen",
     "Suppen",
     "Desserts",
@@ -240,9 +240,9 @@ export default function BookingWizard({
     const formatItems = () => {
       const categories = {
         salate: "Salate",
-        vorspeisen: "Vorspeisen",
-        hauptgaenge: "Hauptgänge",
+        vorspeisen: "Kalte Vorspeisen",
         fingerfoods: "Warme Vorspeisen",
+        hauptgaenge: "Hauptgänge",
         suppen: "Suppen",
         beilagen: "Beilagen",
         desserts: "Desserts",
@@ -575,9 +575,9 @@ GESAMTPREIS BRUTTO: ${total.toFixed(2).replace(".", ",")}€
               )}
               {[
                 "Salate",
-                "Vorspeisen",
+                "Kalte Vorspeisen",
+                "Warme Vorspeisen",
                 "Hauptgänge",
-                "Fingerfoods",
                 "Beilagen",
                 "Suppen",
                 "Desserts",

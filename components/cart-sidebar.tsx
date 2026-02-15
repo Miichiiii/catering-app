@@ -33,9 +33,9 @@ export default function CartSidebar({
 }: CartSidebarProps) {
   const categoryLabels: Record<string, string> = {
     salate: "Salate",
-    vorspeisen: "Vorspeisen",
+    kalte_vorspeisen: "Kalte Vorspeisen",
+    warme_vorspeisen: "Warme Vorspeisen",
     hauptgaenge: "Hauptgänge",
-    fingerfoods: "Fingerfoods",
     beilagen: "Beilagen",
     suppen: "Suppen",
     desserts: "Desserts",

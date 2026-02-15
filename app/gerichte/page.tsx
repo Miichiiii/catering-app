@@ -13,8 +13,8 @@ export default function GerichtePage() {
 
   const categories = [
     { id: "alle", name: "Alle Gerichte" },
-    { id: "vorspeisen", name: "Vorspeisen & Salate" },
-    { id: "fingerfoods", name: "Warme Vorspeisen" },
+    { id: "kalte_vorspeisen", name: "Kalte Vorspeisen" },
+    { id: "warme_vorspeisen", name: "Warme Vorspeisen" },
     { id: "suppen", name: "Suppen" },
     { id: "hauptgaenge", name: "Hauptgerichte" },
     { id: "beilagen", name: "Beilagen" },

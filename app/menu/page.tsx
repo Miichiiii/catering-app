@@ -15,8 +15,8 @@ export default function MenuPage() {
       description: "Ab 20 Personen • Perfekt für kleinere Veranstaltungen",
       includes: [
         "4 Salate zur Auswahl",
-        "1 Vorspeise",
-        "1 Hauptspeise (Fisch / Fleisch) ",
+        "1 kalte Vorspeise",
+        "2 Hauptspeisen (Fisch / Fleisch) ",
         "2 Beilagen",
       ],
       sections: [
@@ -86,9 +86,10 @@ export default function MenuPage() {
       description: "Ab 25 Personen • Unsere beliebteste Wahl",
       includes: [
         "5 Salate",
-        "2 kalte Vorspeisen",
+        "1 kalte Vorspeise",
         "1 warme Vorspeise",
         "2 Hauptspeisen (Fisch / Fleisch)",
+        "2 Beilagen",
         "Dessert (Obst)",
       ],
       sections: [

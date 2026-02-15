@@ -18,7 +18,7 @@ export default function PricingSection({
       items: [
         "4 Salate",
         "1 Vorspeise",
-        "1 Hauptgänge (Fisch/ Fleisch)",
+        "2 Hauptgänge (Fisch/ Fleisch)",
         "2 Beilagen",
       ],
       id: "classic",
@@ -29,10 +29,11 @@ export default function PricingSection({
       price: "60,00€ p.P.",
       items: [
         "5 Salate",
-        "2 Kalte Vorspeisen",
+        "1 Kalte Vorspeise",
         "1 Warme Vorspeise",
         "2 Hauptgänge (Fisch/ Fleisch)",
         "2 Beilagen",
+        "Dessert (Obst)",
       ],
       id: "gold",
       featured: true,
@@ -42,7 +43,7 @@ export default function PricingSection({
       name: "Premium Menü",
       price: "80,00€ p.P.",
       items: [
-        "6 Salate",
+        "5 Salate",
         "2 Kalte Vorspeisen",
         "1 Warme Vorspeise",
         "3 Hauptgänge (Fisch/ Fleisch)",
