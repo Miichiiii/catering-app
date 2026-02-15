@@ -32,6 +32,7 @@ export default function CartSidebar({
   total,
 }: CartSidebarProps) {
   const categoryLabels: Record<string, string> = {
+    salate: "Salate",
     vorspeisen: "Vorspeisen",
     hauptgaenge: "Hauptgänge",
     fingerfoods: "Fingerfoods",

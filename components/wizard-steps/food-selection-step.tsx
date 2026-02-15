@@ -36,6 +36,7 @@ export default function FoodSelectionStep({
   );
 
   const categoryNameMap: Record<string, string> = {
+    salate: "Salate",
     vorspeisen: "Vorspeisen",
     hauptgaenge: "Hauptgänge",
     fingerfoods: "Fingerfoods",

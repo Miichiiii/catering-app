@@ -16,13 +16,12 @@ export default function MenuPage() {
       includes: [
         "4 Salate zur Auswahl",
         "1 Vorspeise",
-        "Hauptspeisen zur Auswahl",
-        "Fisch + 1× Hähnchenfleisch",
+        "1 Hauptspeise (Fisch / Fleisch) ",
         "2 Beilagen",
       ],
       sections: [
         {
-          title: "Salate – Auswahl Menü 1",
+          title: "Salate – Menü 1",
           items: [
             "Rote-Bete mit Salzgurken, Olivenöl, frischen Kräutern",
             "Rote-Bete mit Birnen, Meerrettich, Olivenöl, frischem Koriander",
@@ -43,11 +42,11 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Vorspeisen – Auswahl Menü 1",
+          title: "Vorspeisen – Menü 1",
           items: ["Gemüseauflauf (Gemüse nach Wahl)", "Nudelauflauf"],
         },
         {
-          title: "Hauptspeisen – Auswahl Menü 1",
+          title: "Hauptspeisen – Menü 1",
           subsections: [
             {
               subtitle: "Fisch:",
@@ -68,7 +67,7 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Beilagen – Auswahl Menü 1",
+          title: "Beilagen – Menü 1",
           items: [
             "Gemüsereis",
             "Gebackene Kartoffeln",
@@ -89,7 +88,7 @@ export default function MenuPage() {
         "5 Salate",
         "2 kalte Vorspeisen",
         "1 warme Vorspeise",
-        "2 Hauptspeisen (Fisch + Fleisch)",
+        "2 Hauptspeisen (Fisch / Fleisch)",
         "Dessert (Obst)",
       ],
       sections: [
@@ -181,7 +180,7 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Dessert",
+          title: "Dessert – Menü 2",
           items: ["Saisonobst"],
         },
       ],
@@ -195,11 +194,17 @@ export default function MenuPage() {
       pricePerPerson: true,
       description: "Für größere institutionelle Events und Hochzeiten",
       includes: [
-        "5 Salate · 2 Vorspeisen · 1 warme Vorspeise · 1 Suppe · 3 Hauptspeisen · 3 Beilagen · Dessert",
+        "5 Salate",
+        "2 kalte Vorspeisen",
+        "1 warme Vorspeise",
+        "3 Hauptspeisen (Fisch / Fleisch)",
+        "3 Beilagen",
+        "Dessert (Obst/ Gebäck)",
+        "Suppe (gegen Aufpreis)",
       ],
       sections: [
         {
-          title: "Salate – Auswahl",
+          title: "Salate – Menü 3",
           items: [
             "Rote-Bete mit Salzgurken, Olivenöl und frischen Kräutern",
             "Rote-Bete mit Birnen, Meerrettich, Olivenöl und frischem Koriander",
@@ -226,7 +231,7 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Kalte Vorspeisen – Auswahl",
+          title: "Kalte Vorspeisen – Menü 3",
           items: [
             "Sauté-Auberginenscheiben mit Mayonnaise und frischen Tomaten",
             "Eingelegtes Gemüse nach israelischer Art",
@@ -239,7 +244,7 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Warme Vorspeisen – Auswahl",
+          title: "Warme Vorspeisen – Menü 3",
           items: [
             "Blini mit Kartoffeln",
             "Blini mit Hähnchenfleisch",
@@ -248,7 +253,7 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Suppen – Auswahl",
+          title: "Suppen – Menü 3",
           items: [
             "Kartoffel-Cremesuppe",
             "Gemüsesuppe",
@@ -257,7 +262,7 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Hauptspeisen – Auswahl",
+          title: "Hauptspeisen – Menü 3",
           subsections: [
             {
               subtitle: "Fischgerichte:",
@@ -285,7 +290,7 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Beilagen – Auswahl",
+          title: "Beilagen – Menü 3",
           items: [
             "Gemüsereis",
             "Gebackene Kartoffeln",
@@ -296,7 +301,7 @@ export default function MenuPage() {
           ],
         },
         {
-          title: "Dessert",
+          title: "Dessert – Menü 3",
           items: ["Saisonobst", "Gebäck nach Absprache"],
         },
       ],

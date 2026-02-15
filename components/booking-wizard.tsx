@@ -40,6 +40,7 @@ export default function BookingWizard({
   const [remarks, setRemarks] = useState("");
   const [selectedAllergies, setSelectedAllergies] = useState<string[]>([]);
   const [selectedItems, setSelectedItems] = useState<Record<string, string[]>>({
+    salate: [],
     vorspeisen: [],
     hauptgaenge: [],
     fingerfoods: [],
@@ -76,6 +77,7 @@ export default function BookingWizard({
     "Postleitzahl",
     "Gästeanzahl",
     "Wunschtermin",
+    "Salate",
     "Vorspeisen",
     "Hauptgänge",
     "Fingerfoods",
@@ -237,7 +239,8 @@ export default function BookingWizard({
     // Formatiere ausgewählte Gerichte mit Namen
     const formatItems = () => {
       const categories = {
-        vorspeisen: "Vorspeisen/Salate",
+        salate: "Salate",
+        vorspeisen: "Vorspeisen",
         hauptgaenge: "Hauptgänge",
         fingerfoods: "Warme Vorspeisen",
         suppen: "Suppen",
@@ -571,6 +574,7 @@ GESAMTPREIS BRUTTO: ${total.toFixed(2).replace(".", ",")}€
                 />
               )}
               {[
+                "Salate",
                 "Vorspeisen",
                 "Hauptgänge",
                 "Fingerfoods",
