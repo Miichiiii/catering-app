@@ -527,7 +527,7 @@ export function getPackageItems(
       // Klassik Menü: 4 Salate + 1 Vorspeise, 1 Hauptspeise (Fisch ODER Hähnchen), 2 Beilagen
       kalte_vorspeisen: 1,
       salate: 4,
-      hauptgaenge: 1,
+      hauptgaenge: 2, // 1 Fisch oder 1 Hähnchen zählt als 2 Hauptspeisen, damit die Auswahl zwischen Fisch und Fleisch gewährleistet ist
       warme_vorspeisen: 0,
       beilagen: 2,
       dips_saucen: 0,

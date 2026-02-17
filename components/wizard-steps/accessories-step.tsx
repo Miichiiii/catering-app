@@ -54,33 +54,29 @@ export default function AccessoriesStep({
     {
       name: "Dekoration",
       items: [
-        {
-          id: "buffet-deko-podeste",
-          name: "Elegante Buffetdekoration mit weißen Podesten",
-          description:
-            "Eine stilvolle Buffetdekoration mit weiße Display-Podeste sorgen für unterschiedliche Höhen und eine elegante Präsentation der Speisen. Kombiniert mit feinen Tischläufern, floralen Kunstblumen-Arrangements entsteht ein harmonisches Gesamtbild – einladend, modern und hochwertig.",
-          price: 239.9,
-        },
+        
         {
           id: "tischdecke",
-          name: "Tischdecke",
+          name: "Pro Tischdecke",
           description:
-            "Unsere Tischdecken verleihen Ihrem Event eine elegante Atmosphäre und schützen gleichzeitig Ihre Tische. Aus hochwertigem Material, passend zu jeder Feier, sorgen sie für einen stilvollen Rahmen.\n120x100cm. Vermietung inkl. Reinigung",
+            "Unsere Tischdecken verleihen Ihrem Event eine elegante Atmosphäre und schützen gleichzeitig Ihre Tische. Aus hochwertigem Material, passend zu jeder Feier, sorgen sie für einen stilvollen Rahmen. Vermietung inkl. Reinigung",
           price: 20.0,
         },
-        {
-          id: "buffet-deko-detail",
-          name: "Buffetdekoration mit Liebe zum Detail",
-          description:
-            "Eine stilvolle Kombination aus feinen Tischläufern, natürlichen Holz-Etageren, floralen Akzenten mit Kunstblumen.",
-          price: 189.9,
-        },
+        
         {
           id: "buffet-praesentation-ebenen",
-          name: "Stilvolle Buffetpräsentation auf mehreren Ebenen",
+          name: "Stilvolle Buffetpräsentation auf mehreren Ebenen ( Preis auf Anfrage !)",
           description:
-            "Für eine einladende und stilvolle Präsentation kombinieren wir weiße Deko-Podeste mit warmen Holz-Etageren – so entsteht ein spannendes Spiel aus Höhen, Materialien und Strukturen. Die Speisen werden ansprechend angerichtet, begleitet von weißen Tischdecken, dezenten Tischläufern und ausgewählten Kunstblumen. Eine Dekoration, die schlicht wirkt, aber im Detail überzeugt – charmant, hochwertig und mit Liebe gestaltet.",
-          price: 289.9,
+            "Für eine einladende und stilvolle Präsentation kombinieren wir weiße Deko-Podeste mit warmen Holz-Etageren – so entsteht ein spannendes Spiel aus Höhen, Materialien und Strukturen. Die Speisen werden ansprechend angerichtet, begleitet von weißen Tischdecken, dezenten Tischläufern und ausgewählten Kunstblumen. Eine Dekoration, die schlicht wirkt, aber im Detail überzeugt – charmant, hochwertig und mit Liebe gestaltet. (Preis auf Anfrage)",
+          price: 0.0,
+        },
+
+        {
+          id: "stuhlhülen",
+          name: "Stuhlhülen",
+          description:
+            "Stuhlhülen für Ihre Gäste",
+          price: 4.0,
         },
       ],
     },

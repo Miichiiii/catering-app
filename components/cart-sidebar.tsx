@@ -122,7 +122,7 @@ export default function CartSidebar({
             <span>{subTotal.toFixed(2).replace(".", ",")}€</span>
           </div>
           <div className="flex justify-between">
-            <span>MwSt. 7%</span>
+            <span>MwSt. 19%</span>
             <span>{vat.toFixed(2).replace(".", ",")}€</span>
           </div>
           <div className="border-t border-accent-foreground/20 pt-3 mt-3">

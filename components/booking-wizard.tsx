@@ -448,7 +448,7 @@ ${drinksTotal > 0 ? `Getränke: ${drinksTotal.toFixed(2).replace(".", ",")}€` 
 ${accessoriesTotal > 0 ? `Zubehör: ${accessoriesTotal.toFixed(2).replace(".", ",")}€` : ""}
 ${servicefee > 0 ? `Servicegebühr (bis 20 Personen): ${servicefee.toFixed(2).replace(".", ",")}€` : ""}
 Netto: ${subTotal.toFixed(2).replace(".", ",")}€
-MwSt. 7%: ${vat.toFixed(2).replace(".", ",")}€
+MwSt. 19%: ${vat.toFixed(2).replace(".", ",")}€
 ---
 GESAMTPREIS BRUTTO: ${total.toFixed(2).replace(".", ",")}€
 

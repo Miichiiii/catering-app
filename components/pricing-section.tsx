@@ -137,7 +137,7 @@ export default function PricingSection({
                   <p className="text-2xl font-bold text-primary">
                     Ab {pkg.price}
                   </p>
-                  <p className="text-xs text-muted-foreground">inkl. Mwst.</p>
+                  <p className="text-xs text-muted-foreground">inkl. 19% Mwst.</p>
                   <Button
                     onClick={() =>
                       onSelectPackage(pkg.id as "classic" | "gold" | "premium")
