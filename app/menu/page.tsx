@@ -16,7 +16,7 @@ export default function MenuPage() {
       includes: [
         "4 Salate zur Auswahl",
         "1 kalte Vorspeise",
-        "2 Hauptspeisen (Fisch / Fleisch) ",
+        "2 Hauptspeisen (Fisch / Hähnchenfleisch) ",
         "2 Beilagen",
       ],
       sections: [

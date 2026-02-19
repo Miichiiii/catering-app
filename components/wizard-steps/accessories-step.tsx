@@ -18,18 +18,12 @@ export default function AccessoriesStep({
       items: [
         {
           id: "speiseteller-besteck-30",
-          name: "Speiseteller & Besteck 30er Set",
+          name: "Salat Teller",
           description:
-            "Vermietung inkl. Reinigung\nBeinhaltet:\n- 30x Speiseteller\n- 30x Speisegabel\n- 30x Speisemesser",
-          price: 84.9,
+            "Suppenteller 1 Hauptgangteller (Fisch) 2 Hauptgang Teller (Fleisch) Dessert Teller Besteck: Gabeln, Messer, Löffel Dessert Besteck:  Gabel/Löffel Pro Person 6,50 Euro",
+          price: 6.5,
         },
-        {
-          id: "suppenschuessel-loeffel-30",
-          name: "Suppenschüssel & Löffel 30er Set",
-          description:
-            "Vermietung inkl. Reinigung\nBeinhaltet:\n- 30x Suppenschüssel\n- 30x Löffel",
-          price: 65.9,
-        },
+        
         {
           id: "dessertteller-besteck-30",
           name: "Dessertteller & Besteck 30er Set",
