@@ -25,7 +25,7 @@ export default function PricingSection({
       description: "Perfekt für kleinere Veranstaltungen",
     },
     {
-      name: "Shemesh Gold",
+      name: "Gold",
       price: "60,00€ p.P.",
       items: [
         "5 Salate",
