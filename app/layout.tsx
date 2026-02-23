@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shemesh - Erstklassiges Catering für jedes Event",
+  title: "Koshercatering - Erstklassiges Catering für jedes Event",
   description:
     "Erstklassiges Catering für jedes Event. Buche dein All Inclusive Menü online. Wähle zwischen Classic, Gold und Premium Paketen für unvergessliche Momente.",
   keywords: [
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
   authors: [{ name: "SLAVA BARAEV CATERING" }],
   creator: "SLAVA BARAEV CATERING",
   publisher: "SLAVA BARAEV CATERING",
-  metadataBase: new URL("https://shemesh.medvidov.com"),
+  metadataBase: new URL("https://www.koschercatering.de"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Shemesh - Erstklassiges Catering für jedes Event",
+    title: "Koshercatering - Erstklassiges Catering für jedes Event",
     description:
       "Buche dein All Inclusive Catering-Menü online. Classic, Gold & Premium Pakete für unvergessliche Events.",
-    url: "https://shemesh.medvidov.com",
-    siteName: "Shemesh Catering",
+    url: "https://www.koschercatering.de",
+    siteName: "Koshercatering",
     locale: "de_DE",
     type: "website",
     images: [
@@ -48,13 +48,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg", // Erstelle später ein Open Graph Bild (1200x630px)
         width: 1200,
         height: 630,
-        alt: "Shemesh Catering Service",
+        alt: "Koshercatering Service",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shemesh - Erstklassiges Catering für jedes Event",
+    title: "Koshercatering - Erstklassiges Catering für jedes Event",
     description:
       "Buche dein All Inclusive Catering-Menü online. Classic, Gold & Premium Pakete.",
     images: ["/og-image.jpg"],

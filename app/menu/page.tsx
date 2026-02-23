@@ -80,7 +80,7 @@ export default function MenuPage() {
     },
     {
       id: "menu2",
-      title: "Shemesh Gold",
+      title: "Gold",
       price: "60,00 €",
       pricePerPerson: true,
       description: "Ab 25 Personen • Unsere beliebteste Wahl",
