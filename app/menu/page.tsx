@@ -126,7 +126,6 @@ export default function MenuPage() {
             "Sauté-Auberginenscheiben mit Mayonnaise und frischen Tomaten",
             "Eingelegtes Gemüse nach israelischer Art",
             "Gefüllte Auberginen mit Möhren nach koreanischer Art",
-            "Fischplatte",
             "Gefüllter Fisch als Ganzes (auf Anfrage, Aufpreis)",
             "Sushiplatte (auf Anfrage, Aufpreis)",
             "Gemüseauflauf nach Wahl",
@@ -238,6 +237,7 @@ export default function MenuPage() {
             "Eingelegtes Gemüse nach israelischer Art",
             "Gefüllte Auberginen mit Möhren nach koreanischer Art",
             "Fischplatte",
+            "Fleischplatte"
             "Gefüllter Fisch als Ganzes (auf Anfrage, gegen Aufpreis)",
             "Sushiplatte (auf Anfrage, gegen Aufpreis)",
             "Gemüseauflauf nach Wahl",

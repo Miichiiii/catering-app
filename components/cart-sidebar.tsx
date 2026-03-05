@@ -131,7 +131,7 @@ export default function CartSidebar({
               <span>{total.toFixed(2).replace(".", ",")}€</span>
             </div>
             <div className="text-xs opacity-75 mt-1">
-              inkl. {vat.toFixed(2).replace(".", ",")}€ MwSt.
+              zzgl. {vat.toFixed(2).replace(".", ",")}€ MwSt.
             </div>
           </div>
         </div>

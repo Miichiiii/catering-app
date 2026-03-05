@@ -18,19 +18,13 @@ export default function AccessoriesStep({
       items: [
         {
           id: "speiseteller-besteck-30",
-          name: "Salat Teller",
+          name: "Vermietung inkl Reinigung beinhaltet",
           description:
             "Suppenteller 1 Hauptgangteller (Fisch) 2 Hauptgang Teller (Fleisch) Dessert Teller Besteck: Gabeln, Messer, Löffel Dessert Besteck:  Gabel/Löffel Pro Person 6,50 Euro",
           price: 6.5,
         },
         
-        {
-          id: "dessertteller-besteck-30",
-          name: "Dessertteller & Besteck 30er Set",
-          description:
-            "Vermietung inkl. Reinigung\nBeinhaltet:\n- 30x Dessertteller\n- 30x Dessertgabel oder Dessertlöffel",
-          price: 65.9,
-        },
+        
       ],
     },
     {
@@ -38,10 +32,10 @@ export default function AccessoriesStep({
       items: [
         {
           id: "aufbau-abholung",
-          name: "Aufbau/Abholung",
+          name: "Aufbau/Abholun (Preis auf Anfrage !)",
           description:
             "Das Buffet wird von unserem Team aufgebaut und angerichtet.\nAm darauffolgenden Werktag wird das Buffet zwischen 10:00 - 13:00 Uhr abgeholt.\n\n* Für eine reibungslose Abholung muss das Equipment frei von Essensresten sein und in den bereitgestellten Boxen bereitstehen",
-          price: 95.2,
+          price: 0,
         },
       ],
     },
@@ -54,7 +48,7 @@ export default function AccessoriesStep({
           name: "Pro Tischdecke",
           description:
             "Unsere Tischdecken verleihen Ihrem Event eine elegante Atmosphäre und schützen gleichzeitig Ihre Tische. Aus hochwertigem Material, passend zu jeder Feier, sorgen sie für einen stilvollen Rahmen. Vermietung inkl. Reinigung",
-          price: 20.0,
+          price: 6.0,
         },
         
         {
