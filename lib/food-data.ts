@@ -100,8 +100,6 @@ export const foodItems: Record<string, FoodItem[]> = {
         "/images/cateringbilder/neu3/Gebackene Auberginen mit Kichererbsen,  Paprika.jpeg",
     },
 
-    
-
     {
       id: "nudeln_italien",
       name: "Nudeln nach Italien Art",
@@ -203,7 +201,8 @@ export const foodItems: Record<string, FoodItem[]> = {
         "/images/cateringbilder/Garten Salat ( Spinat, Tomaten und Rucola).jpeg",
     },
   ],
-  kalte_vorspeisen: [ //Kalte Vorspeisen
+  kalte_vorspeisen: [
+    //Kalte Vorspeisen
     {
       id: "eingelegte_gemuese",
       name: "Eingelegte Gemüse",
@@ -221,7 +220,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Ganze Auberginen.jpeg",
     },
-    
+
     {
       id: "auberginen_saute",
       name: "Auberginen Saute",
@@ -256,7 +255,8 @@ export const foodItems: Record<string, FoodItem[]> = {
       image: "/images/cateringbilder/neu2/Nudelauflauf.jpeg",
     },
   ],
-  warme_vorspeisen: [ //Warme Vorspeisen
+  warme_vorspeisen: [
+    //Warme Vorspeisen
     {
       id: "blini_kartoffeln",
       name: "Blini mit Kartoffeln",
@@ -536,7 +536,7 @@ export function getPackageItems(
     },
     gold: {
       // Shemesh Gold: 5 Salate + 2 Vorspeisen, 1 warme Vorspeise, 2 Hauptspeisen (Fisch + Fleisch), 2 Beilagen, 1 Dessert (Obst)
-      salate: 5, 
+      salate: 5,
       kalte_vorspeisen: 1,
       warme_vorspeisen: 1,
       hauptgaenge: 2,
