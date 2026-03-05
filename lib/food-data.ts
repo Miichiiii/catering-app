@@ -85,7 +85,7 @@ export const foodItems: Record<string, FoodItem[]> = {
       id: "fleischplatte",
       name: "Fleischplatte",
       description: "Fleischplatte",
-      category: "Salate",
+      category: "Kalte Vorspeisen",
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Fleischplatte.jpeg",
     },
