@@ -237,7 +237,7 @@ export default function MenuPage() {
             "Eingelegtes Gemüse nach israelischer Art",
             "Gefüllte Auberginen mit Möhren nach koreanischer Art",
             "Fischplatte",
-            "Fleischplatte"
+            "Fleischplatte",
             "Gefüllter Fisch als Ganzes (auf Anfrage, gegen Aufpreis)",
             "Sushiplatte (auf Anfrage, gegen Aufpreis)",
             "Gemüseauflauf nach Wahl",
