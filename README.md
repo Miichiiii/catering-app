@@ -96,5 +96,5 @@ Anwendung läuft unter: http://localhost:3000
 
 ## Lizenz
 
-Proprietär - Shemesh Restaurant
+Proprietär - Koshercatering Restaurant
 # catering-app

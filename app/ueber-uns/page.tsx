@@ -135,11 +135,10 @@ export default function AboutPage() {
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className="space-y-4">
                     <h2 className="text-3xl font-bold text-foreground">
-                      Verbunden mit dem Shemesh Restaurant
+                      
                     </h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                      Als Teil der Shemesh-Familie bringen wir die bewährte
-                      Küche nun direkt zu Ihren Veranstaltungen.
+                      
                     </p>
                     <p className="text-lg text-muted-foreground leading-relaxed">
                       Das Shemesh Restaurant in Düsseldorf hat sich einen
