@@ -5,21 +5,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const EMOJIS = [
-  "🍎",
-  "🍋",
-  "🥦",
-  "🍅",
-  "🧅",
-  "🥕",
-  "🍇",
-  "🌽",
-  "🧄",
-  "🍄",
-  "🥑",
-  "🍓",
-  "🥝",
-  "🍒",
-    "🍍",
 ];
 
 const COUNT = 16;
