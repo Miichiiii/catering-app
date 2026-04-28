@@ -13,7 +13,7 @@ export const foodItems: Record<string, FoodItem[]> = {
   salate: [
     {
       id: "rote_bete_salzgurken",
-      name: "Rote-Bete mit Salzgurken",
+      name: "Rote-Bete mit Salzgurken und Sauerkraut",
       description: "Olivenöl, frischen Kräutern",
       category: "Salate",
       availableIn: ["classic", "gold", "premium"],
@@ -22,8 +22,7 @@ export const foodItems: Record<string, FoodItem[]> = {
 
     {
       id: "rote_bete_birnen",
-      name: "Rote-Bete mit Birnen Meerrettich",
-      description: "Olivenöl, frischem Koriander",
+      name: "Rote-Bete mit Birnen Meerrettich & Nüsse",
       category: "Salate",
       availableIn: ["classic", "gold", "premium"],
       image:
@@ -31,8 +30,8 @@ export const foodItems: Record<string, FoodItem[]> = {
     },
     {
       id: "suesskartoffeln_rote_bete",
-      name: "Süßkartoffeln mit Rote Bete",
-      description: "Kichererbsen",
+      name: "Süßkartoffeln mit Rote Bete & Kichererbsen",
+      description: "Ölivenöl & Frische Kräuter",
       category: "Salate",
       availableIn: ["classic", "gold", "premium"],
       image: "/images/cateringbilder/neu3/Rotebete mit Süßkartoffeln.jpeg",
@@ -40,15 +39,15 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "moehren_salat",
       name: "Möhren Salat",
-      description: "Frisch und knackig",
+      description: "Möhrensalat nach koreanischer Art mit Knoblauch",
       category: "Salate",
       availableIn: ["classic", "gold", "premium"],
       image: "/images/cateringbilder/neu2/Mohren Salat.jpeg",
     },
     {
       id: "kus_kus_paprika",
-      name: "Kus kus mit Paprika",
-      description: "Gurken und frischen Kräutern",
+      name: "Couscous Salat mit Paprika",
+      description: "Olivenöl und frischen Kräutern",
       category: "Salate",
       availableIn: ["classic", "gold", "premium"],
       image: "/images/cateringbilder/neu2/Cous cous mit Paprika Salat.jpeg",
@@ -56,8 +55,8 @@ export const foodItems: Record<string, FoodItem[]> = {
 
     {
       id: "bohnensalat",
-      name: "Bohnensalat",
-      description: "Bohnensalat",
+      name: "Bohnensalat mit Mais und gedünsteten Zwiebeln",
+      description: "mit frischen Kräutern",
       category: "Salate",
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/bohnensalat.jpeg",
@@ -66,7 +65,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "judischer_salat",
       name: "Jüdischer Salat",
-      description: "Jüdischer Salat",
+      description: "gebackene Auberginen, Paprika, frische Tomaten, Knoblauch,ö livenöl und frischen Kräutern",
       category: "Salate",
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Judische Salat.jpeg",
@@ -75,7 +74,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "Hering_unter_Rotebete_Mantel",
       name: "Hering unter Rotebete Mantel",
-      description: "Hering unter Rotebete Mantel",
+      description: "Gekochte Gemüse aufgeschichtet mit Majodressing",
       category: "Salate",
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Hering unter Rotebete Mantel.jpeg",
@@ -84,7 +83,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "fleischplatte",
       name: "Fleischplatte",
-      description: "Fleischplatte",
+      description: "verschiedene Fleischsorten",
       category: "Kalte Vorspeisen",
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Fleischplatte.jpeg",
@@ -145,7 +144,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "kartoffeln_salat_israeli",
       name: "Kartoffeln Salat nach Israelischer Art",
-      description: "Traditionell gewürzt",
+      description: "gekochtes Gemüse, Eier kleingeschnitten, mit Mayo verfeinert",
       category: "Salate",
       availableIn: ["classic", "gold", "premium"],
       image:
@@ -169,7 +168,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     },
     {
       id: "weisskohl_rotkohl",
-      name: "Weißkohl/ Rotkohl Salat",
+      name: "Weißkohl/ Rotkohl Salat mit Erbsen",
       description: "Mit Erbsen",
       category: "Salate",
       availableIn: ["classic", "gold", "premium"],
@@ -194,7 +193,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "garten_salat",
       name: "Garten Salat",
-      description: "Spinat, Tomaten, Rucola",
+      description: "Spinat, Tomaten, Rucola verfeinert mit Ölivenöl",
       category: "Salate",
       availableIn: ["classic", "gold", "premium"],
       image:
@@ -215,7 +214,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "ganze_auberginen",
       name: "Ganze Auberginen",
-      description: "Ganze Auberginen",
+      description: "Gebeacknee Aubergine, frische Tomate, Kräuter und ölivenöl",
       category: "Vorspeisen",
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Ganze Auberginen.jpeg",
@@ -224,7 +223,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "auberginen_saute",
       name: "Auberginen Saute",
-      description: "Auberginen Saute",
+      description: "Gebratene Auberginenringe, belegt mit frischen Tomaten verfeinert mit Käse und Knoblauch",
       category: "Vorspeisen",
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Auberginen Saute.jpeg",
@@ -233,7 +232,7 @@ export const foodItems: Record<string, FoodItem[]> = {
     {
       id: "fischplatte",
       name: "Fischplatte",
-      description: "Fischplatte",
+      description: "verschidene fischsorten Ggeräuchert, Eingebezeit)",
       category: "Vorspeisen",
       availableIn: ["gold", "premium"],
       image: "/images/cateringbilder/neu3/Fischplatte.jpeg",
