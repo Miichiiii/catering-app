@@ -89,11 +89,22 @@ export default function HeroSection({ onSelectPackage }: HeroSectionProps) {
           {[
             {
               id: "kashrut",
-              title: "Kaschrutaufsicht der ORD",
-              description:
-                "Durch Chabad Düsseldorf. Auf Wunsch auch durch Oberrabbiner Schimon Lewin (Düsseldorf) oder durch Oberrabbiner David Geballe (Duisburg) gewährleistet. Alle Speisen werden unter strenger Aufsicht zubereitet und entsprechen den höchsten Standards der Kaschrut.",
-              icon: "✡️",
-              pdf: "/scan.pdf",
+  title: "Kaschrutaufsicht der ORD",
+  description: (
+    <>
+      Durch Chabad Düsseldorf. Auf Wunsch auch durch Oberrabbiner Schimon Lewin (Düsseldorf) oder durch Oberrabbiner David Geballe (Duisburg) gewährleistet. Alle Speisen werden unter strenger Aufsicht zubereitet und entsprechen den höchsten Standards der Kaschrut.
+      <br />
+      <a
+        href="/scan.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:underline font-medium block mt-2"
+      >
+        📄 Nachweis als PDF ansehen
+      </a>
+    </>
+  ),
+  icon: "✡️",
             },
             {
               id: "tradition",
