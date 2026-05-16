@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,9 +35,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-2xl font-bold text-primary hover:opacity-80 transition"
+          className="hover:opacity-80 transition flex items-center"
         >
-          SLAVA BARAEV CATERING
+          <Image 
+            src="/icon.jpeg" 
+            alt="Slava Baraev Catering Logo" 
+            width={120} 
+            height={60} 
+            className="object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -71,8 +78,14 @@ export default function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <SheetHeader>
-              <SheetTitle className="text-2xl font-bold text-primary">
-                SLAVA BARAEV CATERING
+              <SheetTitle className="text-2xl font-bold text-primary flex items-center">
+                <Image 
+                  src="/icon.jpeg" 
+                  alt="Slava Baraev Catering Logo" 
+                  width={150} 
+                  height={50} 
+                  className="object-contain"
+                />
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-4 mt-8">
